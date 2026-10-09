@@ -16,7 +16,33 @@ NB_CATEGORIES = 20
 NB_PRODUCTS = 5_000
 NB_TRANSACTIONS = 1_000_000
 
-COUNTRIES = ["TG", "BJ", "GH", "CI", "SN", "NG", "CM"]
+import pycountry
+
+COUNTRY_WEIGHTS = {
+    "TG": 28,
+    "BJ": 17,
+    "GH": 15,
+    "CI": 14,
+    "SN": 10,
+    "NG": 9,
+    "CM": 7,
+}
+
+COUNTRIES = [
+    pycountry.countries.get(alpha_2=code)
+    for code in COUNTRY_WEIGHTS
+]
+
+if any(country is None for country in COUNTRIES):
+    raise ValueError("Un ou plusieurs codes ISO de pays sont invalides.")
+
+COUNTRY_CODES = [country.alpha_2 for country in COUNTRIES]
+COUNTRY_PROBABILITIES = list(COUNTRY_WEIGHTS.values())
+
+COUNTRY_NAMES = {
+    country.alpha_2: country.name
+    for country in COUNTRIES
+}
 
 SEGMENTS = [
     "standard",
@@ -80,6 +106,13 @@ def money(value: Decimal) -> Decimal:
         Decimal("0.01"),
         rounding=ROUND_HALF_UP,
     )
+
+def random_country() -> str:
+    return random.choices(
+        COUNTRY_CODES,
+        weights=COUNTRY_PROBABILITIES,
+        k=1,
+    )[0]
 
 
 def generate_categories() -> None:
@@ -152,7 +185,7 @@ def generate_customers() -> dict[int, str]:
         ])
 
         for customer_id in range(1, NB_CUSTOMERS + 1):
-            country = random.choice(COUNTRIES)
+            country = random_country()
 
             signup_date = random_datetime(
                 CUSTOMER_START_DATE,
@@ -183,7 +216,7 @@ def calculate_amount(
     return money(subtotal - discount)
 
 
-def generate_transactions(products: dict[int, Decimal]) -> None:
+def generate_transactions(products: dict[int, Decimal], customers: dict[int, str]) -> None:
     path = OUTPUT_DIR / f"transactions/transactions_{datetime.today().strftime('%Y-%m-%d')}.csv"
 
     discount_rates = [
@@ -234,16 +267,23 @@ def generate_transactions(products: dict[int, Decimal]) -> None:
             )
 
             status = random.choice(STATUSES)
+            
+            customer_country = customers[customer_id]
+
+            if random.random() < 0.92:
+                transaction_country = customer_country
+            else:
+                transaction_country = random_country()
 
             writer.writerow([
                 transaction_id,
                 customer_id,
                 product_id,
                 quantity,
-                unit_price,
-                discount_rate,
-                amount,
-                random.choice(COUNTRIES),
+                f"{unit_price:.2f}",
+                f"{discount_rate:.2f}",
+                f"{amount:.2f}",
+                transaction_country,
                 status,
                 timestamp.strftime("%Y-%m-%dT%H:%M:%S"),
                 random.choice(PAYMENT_METHODS),
@@ -253,21 +293,15 @@ def generate_transactions(products: dict[int, Decimal]) -> None:
 
 
 def main() -> None:
-    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-    (OUTPUT_DIR / "transactions").mkdir(parents=True, exist_ok=True)
-    (OUTPUT_DIR / "categories").mkdir(parents=True, exist_ok=True)
-    (OUTPUT_DIR / "products").mkdir(parents=True, exist_ok=True)
-    (OUTPUT_DIR / "customers").mkdir(parents=True, exist_ok=True)
+    for sub in ("categories", "products", "customers", "transactions"):
+        (OUTPUT_DIR / sub).mkdir(parents=True, exist_ok=True)
 
     print("Generating final ecommerce dataset...\n")
 
     generate_categories()
-
     products = generate_products()
-
-    generate_customers()
-
-    generate_transactions(products)
+    customers = generate_customers()
+    generate_transactions(products, customers)
 
     print("\nGeneration completed.")
 

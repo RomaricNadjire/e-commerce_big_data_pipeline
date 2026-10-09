@@ -199,6 +199,7 @@ services:
       - ./hadoop/config:/opt/spark/conf/hadoop:ro
       - ./spark/jobs:/opt/spark/jobs
       - ./spark/data:/opt/spark/data
+      - ./spark/jars/postgresql-42.7.8.jar:/opt/spark/jars/postgresql-42.7.8.jar:ro
       - ./spark/conf/spark-defaults.conf:/opt/spark/conf/spark-defaults.conf:ro
 
   spark-worker1:
@@ -234,6 +235,7 @@ services:
       - ./hadoop/config:/opt/spark/conf/hadoop:ro
       - ./spark/jobs:/opt/spark/jobs
       - ./spark/data:/opt/spark/data
+      - ./spark/jars/postgresql-42.7.8.jar:/opt/spark/jars/postgresql-42.7.8.jar:ro
       - ./spark/conf/spark-defaults.conf:/opt/spark/conf/spark-defaults.conf:ro
 
   spark-worker2:
@@ -269,6 +271,7 @@ services:
       - ./hadoop/config:/opt/spark/conf/hadoop:ro
       - ./spark/jobs:/opt/spark/jobs
       - ./spark/data:/opt/spark/data
+      - ./spark/jars/postgresql-42.7.8.jar:/opt/spark/jars/postgresql-42.7.8.jar:ro
       - ./spark/conf/spark-defaults.conf:/opt/spark/conf/spark-defaults.conf:ro
   
   api:

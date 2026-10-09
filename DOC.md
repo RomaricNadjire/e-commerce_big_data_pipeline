@@ -143,3 +143,11 @@ docker exec -i airflow_training_postgres \
 ```bash
 openssl rand -hex 32
 ```
+
+### Pré-télécharger le jar à le monter
+
+```bash
+mkdir -p spark/jars
+curl -L -o spark/jars/postgresql-42.7.8.jar \
+  https://repo1.maven.org/maven2/org/postgresql/postgresql/42.7.8/postgresql-42.7.8.jar
+```
