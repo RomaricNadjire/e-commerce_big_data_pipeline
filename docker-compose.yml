@@ -172,7 +172,14 @@ services:
       SPARK_MASTER_WEBUI_PORT: 8080
       HADOOP_CONF_DIR: /opt/spark/conf/hadoop
       SPARK_HOME: /opt/spark
+      SPARK_LOCAL_DIRS: /tmp/spark-local
+      SPARK_CONF_DIR: /opt/spark/conf
       PATH: /opt/spark/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_PORT: ${POSTGRES_PORT}
+      POSTGRES_HOST: postgres  
 
     ports:
       - "18080:8080"
@@ -183,6 +190,7 @@ services:
       - ./hadoop/config:/opt/spark/conf/hadoop:ro
       - ./spark/jobs:/opt/spark/jobs
       - ./spark/data:/opt/spark/data
+      - ./spark/conf/spark-defaults.conf:/opt/spark/conf/spark-defaults.conf:ro
 
   spark-worker1:
     image: apache/spark:4.2.0-python3
@@ -199,6 +207,13 @@ services:
       SPARK_WORKER_CORES: 2
       SPARK_WORKER_MEMORY: 1g
       HADOOP_CONF_DIR: /opt/spark/conf/hadoop
+      SPARK_LOCAL_DIRS: /tmp/spark-local
+      SPARK_CONF_DIR: /opt/spark/conf
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_PORT: ${POSTGRES_PORT}
+      POSTGRES_HOST: postgres
 
     depends_on:
       - spark-master
@@ -210,6 +225,7 @@ services:
       - ./hadoop/config:/opt/spark/conf/hadoop:ro
       - ./spark/jobs:/opt/spark/jobs
       - ./spark/data:/opt/spark/data
+      - ./spark/conf/spark-defaults.conf:/opt/spark/conf/spark-defaults.conf:ro
 
   spark-worker2:
     image: apache/spark:4.2.0-python3
@@ -226,6 +242,13 @@ services:
       SPARK_WORKER_CORES: 2
       SPARK_WORKER_MEMORY: 1g
       HADOOP_CONF_DIR: /opt/spark/conf/hadoop
+      SPARK_LOCAL_DIRS: /tmp/spark-local
+      SPARK_CONF_DIR: /opt/spark/conf
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_PORT: ${POSTGRES_PORT}
+      POSTGRES_HOST: postgres  
 
     depends_on:
       - spark-master
@@ -237,6 +260,7 @@ services:
       - ./hadoop/config:/opt/spark/conf/hadoop:ro
       - ./spark/jobs:/opt/spark/jobs
       - ./spark/data:/opt/spark/data
+      - ./spark/conf/spark-defaults.conf:/opt/spark/conf/spark-defaults.conf:ro
   
   api:
     build:

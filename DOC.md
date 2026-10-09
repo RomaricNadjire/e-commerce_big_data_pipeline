@@ -91,3 +91,10 @@ airflow standalone
 ```bash
 docker exec training_api sh -c "apt-get update && apt-get install -y curl"
 ```
+
+## Créer un répertoire Ivy accessible
+
+```bash
+docker exec -u 0 training_spark_master sh -c \
+  'mkdir -p /tmp/spark-ivy/cache /tmp/spark-ivy/jars && chmod -R 777 /tmp/spark-ivy'
+```
