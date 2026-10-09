@@ -15,6 +15,15 @@ services:
 
     volumes:
       - postgres_data:/var/lib/postgresql/data
+      - ./postgres/init:/docker-entrypoint-initdb.d:ro
+    
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+
   nifi:
     image: apache/nifi:2.11.0 
     container_name: training_nifi
@@ -282,6 +291,32 @@ services:
     volumes:
       - ./api:/app                  # live-reload during dev
     command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+  
+  metabase:
+    image: metabase/metabase:v0.54.1
+    container_name: training_metabase
+    hostname: metabase
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      MB_DB_TYPE: postgres
+      MB_DB_DBNAME: metabase_app
+      MB_DB_PORT: 5432
+      MB_DB_USER: ${POSTGRES_USER}
+      MB_DB_PASS: ${POSTGRES_PASSWORD}
+      MB_DB_HOST: postgres
+      # Clé de chiffrement des credentials stockés (génère-la une fois et garde-la)
+      MB_ENCRYPTION_SECRET_KEY: ${MB_ENCRYPTION_SECRET_KEY}
+    depends_on:
+      postgres:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "curl --fail -I http://localhost:3000/api/health || exit 1"]
+      interval: 15s
+      timeout: 5s
+      retries: 10
+      start_period: 60s
 
 volumes:
   postgres_data:

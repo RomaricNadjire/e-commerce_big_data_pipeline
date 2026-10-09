@@ -16,9 +16,10 @@ Plateforme pédagogique de Data Engineering construite autour d'un cas e-commerc
 - [8. API et ingestion temps réel](#8-api-et-ingestion-temps-réel)
 - [9. Kafka](#9-kafka)
 - [10. PostgreSQL](#10-postgresql)
-- [11. Commandes de diagnostic](#11-commandes-de-diagnostic)
-- [12. Points d'attention](#12-points-dattention)
-- [13. Améliorations prévues](#13-améliorations-prévues)
+- [11. Visualisation avec Metabase](#11-visualisation-avec-metabase)
+- [12. Commandes de diagnostic](#12-commandes-de-diagnostic)
+- [13. Points d'attention](#13-points-dattention)
+- [14. Améliorations prévues](#14-améliorations-prévues)
 
 ## 1. Objectifs
 
@@ -78,7 +79,7 @@ Les versions indiquées correspondent à l'environnement de développement du pr
                 │                                  │
                 │                                  ▼
                 │                             PostgreSQL
-                ▼
+                ▼                          (opérationnel)
               Airflow
                 │
                 ▼
@@ -92,6 +93,10 @@ Les versions indiquées correspondent à l'environnement de développement du pr
                 ▼
            PostgreSQL
         tables analytiques
+                │
+                ▼
+            Metabase
+        dashboards BI
 ```
 
 Ce schéma représente l'architecture cible. Le chemin FastAPI → NiFi HTTP a été testé, mais chaque destination doit encore être vérifiée séparément. Ne considère pas le flux temps réel comme terminé tant que les écritures HDFS et Kafka, ainsi que le consommateur, n'ont pas été testés de bout en bout.
@@ -525,7 +530,76 @@ SELECT COUNT(*) FROM products;
 
 Confirme les noms exacts des tables et des colonnes dans `postgres/init/001_schema.sql`.
 
-## 11. Commandes de diagnostic
+## 11. Visualisation avec Metabase
+
+Metabase est l'outil de restitution utilisé pour explorer les tables analytiques et construire les dashboards. Il lit les tables Gold produites par Spark et ne modifie jamais les données.
+
+### 11.1. Rôle et port
+
+Metabase tourne dans un conteneur dédié et publie son interface sur le port `3000`.
+
+| Service  | Adresse                 |
+| -------- | ----------------------- |
+| Metabase | `http://localhost:3000` |
+
+Metabase utilise lui-même PostgreSQL pour stocker sa configuration interne. Deux bases distinctes coexistent donc dans le même serveur PostgreSQL :
+
+- `metabase_app` : configuration interne de Metabase (utilisateurs, dashboards, questions, historique). Cette base ne doit pas être interrogée manuellement.
+- `${POSTGRES_DB}` : base e-commerce contenant les référentiels, les transactions opérationnelles et les tables Gold. C'est celle-ci que Metabase doit interroger pour la BI.
+
+Ne confonds pas les deux : une question Metabase s'exécute toujours sur la base e-commerce, pas sur `metabase_app`.
+
+### 11.2. Variables d'environnement
+
+Metabase exige une clé de chiffrement pour les identifiants qu'il stocke dans sa base. Sans cette clé, il refuse de démarrer.
+
+Dans `.env` :
+
+```bash
+MB_ENCRYPTION_SECRET_KEY=<clé générée>
+```
+
+### 11.3. Création de la base applicative
+
+Metabase crée ses tables automatiquement, mais pas la base elle-même. Sur un volume déjà existant, ce script n'est pas rejoué : il faut créer la base manuellement une seule fois.
+
+```bash
+docker exec -i airflow_training_postgres \
+  psql -U "$POSTGRES_USER" -d "$POSTGRES_DB" \
+  -c "CREATE DATABASE metabase_app;"
+```
+
+#### Vérifier
+
+```bash
+docker exec -i airflow_training_postgres \
+  psql -U "$POSTGRES_USER" -d "$POSTGRES_DB" -c "\l" | grep metabase_app
+```
+
+### 11.4. Démarrer Metabase
+
+```bash
+docker compose up -d postgres metabase
+docker compose logs -f metabase
+```
+
+Attendre la ligne :
+`*INFO core.core :: Metabase Initialization COMPLETE*`
+
+### 11.5. Export et versionnement des dashboards
+
+Le script scripts/export_metabase.sh effectue cet export.
+
+```bash
+export METABASE_USER="admin@exemple.com"
+export METABASE_PASSWORD="<mot_de_passe>"
+export METABASE_URL="http://localhost:3000"
+./scripts/export_metabase.sh
+```
+
+Les fichiers sont écrits dans `metabase/dashboards/`
+
+## 12. Commandes de diagnostic
 
 État des services :
 
@@ -560,9 +634,9 @@ airflow dags list-runs ecommerce_pipeline
 
 En cas d'erreur, examine en priorité les logs de la tâche Airflow, ceux du service concerné, les chemins HDFS et les noms DNS/ports utilisés entre les conteneurs.
 
-## 12. Points d'attention
+## 13. Points d'attention
 
-### 12.1. Références disponibles dans Silver
+### 13.1. Références disponibles dans Silver
 
 Une transaction peut arriver avant que son client ou son produit ait été traité dans Silver. Le pipeline distingue donc les données réellement invalides des transactions valides dont les références sont momentanément absentes.
 
@@ -570,19 +644,19 @@ Les transactions en attente de référence doivent pouvoir être retraitées apr
 
 L'API peut vérifier les produits dans PostgreSQL opérationnel, mais le traitement analytique doit toujours contrôler la cohérence des références utilisées dans Silver.
 
-### 12.2. Livraison des événements
+### 13.2. Livraison des événements
 
 Si l'API enregistre une transaction dans PostgreSQL mais échoue ensuite à l'envoyer à NiFi, les systèmes peuvent diverger. Un simple journal d'erreur ne garantit pas la livraison. Une approche plus robuste serait un **outbox pattern** ou une file de publication persistante, accompagnée d'une stratégie de reprise.
 
-### 12.3. Identifiants uniques
+### 13.3. Identifiants uniques
 
 Un compteur Python en mémoire repart de sa valeur initiale au redémarrage et ne garantit pas l'unicité entre plusieurs processus. Pour un fonctionnement robuste, l'identifiant doit être produit par un mécanisme globalement unique, par exemple une séquence persistante ou un UUID compatible avec le modèle de données.
 
-### 12.4. Doublons et reprises
+### 13.4. Doublons et reprises
 
 Kafka, les retries Airflow et les rejeux peuvent conduire à retraiter un événement. Il faut définir une clé unique et une stratégie idempotente pour les écritures dans PostgreSQL et Silver. Ne revendique pas une garantie « exactly-once » de bout en bout sans démontrer comment les écritures, les offsets et les reprises sont coordonnés.
 
-### 12.5. Réseau et secrets
+### 13.5. Réseau et secrets
 
 - Dans Docker, utiliser le nom du service et le port interne.
 - Depuis l'hôte, utiliser le port publié.
@@ -590,16 +664,13 @@ Kafka, les retries Airflow et les rejeux peuvent conduire à retraiter un évén
 - Ne supprimer pas les volumes Docker si les données doivent être conservées.
 - Vérifier qu'un générateur n'écrasera pas les fichiers existants avant de le lancer.
 
-## 13. Améliorations prévues
+## 14. Améliorations prévues
 
 - Finaliser le flux NiFi avec écriture de chaque événement dans HDFS Raw et Kafka.
-- Vérifier le consommateur Kafka vers PostgreSQL et sa gestion des doublons, erreurs et offsets.
 - Mettre en place une stratégie fiable de publication entre l'enregistrement opérationnel et le flux d'événements.
-- Garantir l'idempotence des jobs Silver lors des retries et rejeux.
-- Définir la reprise des transactions en attente de références.
-- Ajouter l'interface Streamlit de vente et utiliser Metabase pour les analyses.
-- Ajouter un fichier `.env.example` sans secrets.
 - Ajouter des tests automatisés pour l'API, les règles métier et les traitements Spark.
+- Finaliser les dashboards Metabase : Executive, Ventes & temps, Produits & catégories, Clients & paiement.
+- Versionner la configuration des dashboards via `scripts/export_metabase.sh`.
 
 ---
 

@@ -1,0 +1,4219 @@
+{
+  "description": null,
+  "archived": false,
+  "view_count": 96,
+  "collection_position": null,
+  "dashcards": [
+    {
+      "size_x": 6,
+      "dashboard_tab_id": 4,
+      "series": [],
+      "action_id": null,
+      "collection_authority_level": null,
+      "card": {
+        "cache_invalidated_at": null,
+        "description": null,
+        "archived": false,
+        "view_count": 27,
+        "collection_position": null,
+        "source_card_id": null,
+        "table_id": null,
+        "result_metadata": [
+          {
+            "display_name": "ca_total",
+            "field_ref": [
+              "field",
+              "ca_total",
+              {
+                "base-type": "type/Decimal"
+              }
+            ],
+            "base_type": "type/Decimal",
+            "effective_type": "type/Decimal",
+            "database_type": "numeric",
+            "name": "ca_total",
+            "semantic_type": null,
+            "fingerprint": {
+              "global": {
+                "distinct-count": 1,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 2286180486.8,
+                  "q1": 2286180486.8,
+                  "q3": 2286180486.8,
+                  "max": 2286180486.8,
+                  "sd": null,
+                  "avg": 2286180486.8
+                }
+              }
+            }
+          }
+        ],
+        "initially_published_at": null,
+        "can_write": true,
+        "database_id": 2,
+        "enable_embedding": false,
+        "collection_id": null,
+        "query_type": "native",
+        "name": "Chiffre d'affaires total",
+        "last_used_at": "2026-10-09T14:06:29.510328Z",
+        "type": "question",
+        "query_average_duration": 34,
+        "creator_id": 1,
+        "moderation_reviews": [],
+        "updated_at": "2026-10-09T14:07:40.87295Z",
+        "made_public_by_id": null,
+        "embedding_params": null,
+        "cache_ttl": null,
+        "dataset_query": {
+          "database": 2,
+          "type": "native",
+          "native": {
+            "template-tags": {
+              "date_filter": {
+                "type": "number",
+                "name": "date_filter",
+                "id": "f4cc459f-5e76-40fe-be47-b3d1a571e123",
+                "display-name": "Date Filter"
+              }
+            },
+            "query": "SELECT\n  SUM(total_sales_amount) AS ca_total\nFROM\n  gold_daily_sales\nWHERE\n  1 = 1 [[AND {{date_filter}}]];"
+          }
+        },
+        "id": 38,
+        "parameter_mappings": [],
+        "display": "scalar",
+        "archived_directly": false,
+        "entity_id": "n9tgMQn-qCb2bzZWsQSzr",
+        "collection_preview": true,
+        "visualization_settings": {
+          "column_settings": {
+            "[\"name\",\"ca_total\"]": {
+              "decimals": 2,
+              "suffix": " €"
+            }
+          }
+        },
+        "metabase_version": "v0.54.1 (774e5a3)",
+        "parameters": [
+          {
+            "id": "f4cc459f-5e76-40fe-be47-b3d1a571e123",
+            "type": "number/=",
+            "target": [
+              "variable",
+              [
+                "template-tag",
+                "date_filter"
+              ]
+            ],
+            "name": "Date Filter",
+            "slug": "date_filter"
+          }
+        ],
+        "dashboard_id": 2,
+        "created_at": "2026-10-09T12:15:58.349908Z",
+        "public_uuid": null
+      },
+      "updated_at": "2026-10-09T12:15:58.398638Z",
+      "col": 0,
+      "id": 35,
+      "parameter_mappings": [],
+      "card_id": 38,
+      "entity_id": "p4336FtU3L-t5zhTsUe0M",
+      "visualization_settings": {},
+      "size_y": 3,
+      "dashboard_id": 2,
+      "created_at": "2026-10-09T12:15:58.398638Z",
+      "row": 0
+    },
+    {
+      "size_x": 6,
+      "dashboard_tab_id": 4,
+      "series": [],
+      "action_id": null,
+      "collection_authority_level": null,
+      "card": {
+        "cache_invalidated_at": null,
+        "description": null,
+        "archived": false,
+        "view_count": 26,
+        "collection_position": null,
+        "source_card_id": null,
+        "table_id": null,
+        "result_metadata": [
+          {
+            "display_name": "nb_transactions",
+            "field_ref": [
+              "field",
+              "nb_transactions",
+              {
+                "base-type": "type/Decimal"
+              }
+            ],
+            "base_type": "type/Decimal",
+            "effective_type": "type/Decimal",
+            "database_type": "numeric",
+            "name": "nb_transactions",
+            "semantic_type": null,
+            "fingerprint": {
+              "global": {
+                "distinct-count": 1,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 995425.0,
+                  "q1": 995425.0,
+                  "q3": 995425.0,
+                  "max": 995425.0,
+                  "sd": null,
+                  "avg": 995425.0
+                }
+              }
+            }
+          }
+        ],
+        "initially_published_at": null,
+        "can_write": true,
+        "database_id": 2,
+        "enable_embedding": false,
+        "collection_id": null,
+        "query_type": "native",
+        "name": "Nombre de transactions",
+        "last_used_at": "2026-10-09T14:06:29.510328Z",
+        "type": "question",
+        "query_average_duration": 30,
+        "creator_id": 1,
+        "moderation_reviews": [],
+        "updated_at": "2026-10-09T14:07:40.87295Z",
+        "made_public_by_id": null,
+        "embedding_params": null,
+        "cache_ttl": null,
+        "dataset_query": {
+          "database": 2,
+          "info": {
+            "card-entity-id": "xhaijQviCsVwVw9MCyUv4"
+          },
+          "type": "native",
+          "native": {
+            "template-tags": {
+              "date_filter": {
+                "type": "text",
+                "name": "date_filter",
+                "id": "52340681-5642-45c9-9476-292a7dc594e7",
+                "display-name": "Date Filter"
+              }
+            },
+            "query": "SELECT SUM(total_transactions) AS nb_transactions\nFROM gold_daily_sales\nWHERE 1=1 [[AND {{date_filter}}]];"
+          }
+        },
+        "id": 39,
+        "parameter_mappings": [],
+        "display": "scalar",
+        "archived_directly": false,
+        "entity_id": "o8l-1381Ed41d9fvCfZNp",
+        "collection_preview": true,
+        "visualization_settings": {},
+        "metabase_version": "v0.54.1 (774e5a3)",
+        "parameters": [
+          {
+            "id": "52340681-5642-45c9-9476-292a7dc594e7",
+            "type": "category",
+            "target": [
+              "variable",
+              [
+                "template-tag",
+                "date_filter"
+              ]
+            ],
+            "name": "Date Filter",
+            "slug": "date_filter"
+          }
+        ],
+        "dashboard_id": 2,
+        "created_at": "2026-10-09T12:17:48.396395Z",
+        "public_uuid": null
+      },
+      "updated_at": "2026-10-09T12:17:48.417081Z",
+      "col": 6,
+      "id": 36,
+      "parameter_mappings": [],
+      "card_id": 39,
+      "entity_id": "JMu8MQjTItJjbRyeL8kIL",
+      "visualization_settings": {},
+      "size_y": 3,
+      "dashboard_id": 2,
+      "created_at": "2026-10-09T12:17:48.417081Z",
+      "row": 0
+    },
+    {
+      "size_x": 6,
+      "dashboard_tab_id": 4,
+      "series": [],
+      "action_id": null,
+      "collection_authority_level": null,
+      "card": {
+        "cache_invalidated_at": null,
+        "description": null,
+        "archived": false,
+        "view_count": 25,
+        "collection_position": null,
+        "source_card_id": null,
+        "table_id": null,
+        "result_metadata": [
+          {
+            "display_name": "panier_moyen",
+            "field_ref": [
+              "field",
+              "panier_moyen",
+              {
+                "base-type": "type/Decimal"
+              }
+            ],
+            "base_type": "type/Decimal",
+            "effective_type": "type/Decimal",
+            "database_type": "numeric",
+            "name": "panier_moyen",
+            "semantic_type": null,
+            "fingerprint": {
+              "global": {
+                "distinct-count": 1,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 2870.32,
+                  "q1": 2870.32,
+                  "q3": 2870.32,
+                  "max": 2870.32,
+                  "sd": null,
+                  "avg": 2870.32
+                }
+              }
+            }
+          }
+        ],
+        "initially_published_at": null,
+        "can_write": true,
+        "database_id": 2,
+        "enable_embedding": false,
+        "collection_id": null,
+        "query_type": "native",
+        "name": "Panier moyen",
+        "last_used_at": "2026-10-09T14:06:29.510328Z",
+        "type": "question",
+        "query_average_duration": 31,
+        "creator_id": 1,
+        "moderation_reviews": [],
+        "updated_at": "2026-10-09T14:07:40.87295Z",
+        "made_public_by_id": null,
+        "embedding_params": null,
+        "cache_ttl": null,
+        "dataset_query": {
+          "database": 2,
+          "info": {
+            "card-entity-id": "g5zA9vlxjs5UvqCgSwJDN"
+          },
+          "type": "native",
+          "native": {
+            "template-tags": {
+              "date_filter": {
+                "type": "text",
+                "name": "date_filter",
+                "id": "ae06a47d-da9d-4df8-b837-271ef13191d3",
+                "display-name": "Date Filter"
+              }
+            },
+            "query": "SELECT\n    ROUND(\n        SUM(total_sales_amount)::numeric\n        / NULLIF(SUM(completed_transactions), 0),\n        2\n    ) AS panier_moyen\nFROM gold_daily_sales\nWHERE 1=1 [[AND {{date_filter}}]];"
+          }
+        },
+        "id": 40,
+        "parameter_mappings": [],
+        "display": "scalar",
+        "archived_directly": false,
+        "entity_id": "ZwHg_ZTUVh7vRcd_ZoZyJ",
+        "collection_preview": true,
+        "visualization_settings": {
+          "column_settings": {
+            "[\"name\",\"panier_moyen\"]": {
+              "suffix": " €"
+            }
+          }
+        },
+        "metabase_version": "v0.54.1 (774e5a3)",
+        "parameters": [
+          {
+            "id": "ae06a47d-da9d-4df8-b837-271ef13191d3",
+            "type": "category",
+            "target": [
+              "variable",
+              [
+                "template-tag",
+                "date_filter"
+              ]
+            ],
+            "name": "Date Filter",
+            "slug": "date_filter"
+          }
+        ],
+        "dashboard_id": 2,
+        "created_at": "2026-10-09T12:19:08.269072Z",
+        "public_uuid": null
+      },
+      "updated_at": "2026-10-09T12:19:08.289761Z",
+      "col": 12,
+      "id": 37,
+      "parameter_mappings": [],
+      "card_id": 40,
+      "entity_id": "wD-aloLHf-AtMWIBsK1Cv",
+      "visualization_settings": {},
+      "size_y": 3,
+      "dashboard_id": 2,
+      "created_at": "2026-10-09T12:19:08.289761Z",
+      "row": 0
+    },
+    {
+      "size_x": 6,
+      "dashboard_tab_id": 4,
+      "series": [],
+      "action_id": null,
+      "collection_authority_level": null,
+      "card": {
+        "cache_invalidated_at": null,
+        "description": null,
+        "archived": false,
+        "view_count": 24,
+        "collection_position": null,
+        "source_card_id": null,
+        "table_id": null,
+        "result_metadata": [
+          {
+            "display_name": "taux_annulation_pct",
+            "field_ref": [
+              "field",
+              "taux_annulation_pct",
+              {
+                "base-type": "type/Decimal"
+              }
+            ],
+            "base_type": "type/Decimal",
+            "effective_type": "type/Decimal",
+            "database_type": "numeric",
+            "name": "taux_annulation_pct",
+            "semantic_type": null,
+            "fingerprint": {
+              "global": {
+                "distinct-count": 1,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 19.99,
+                  "q1": 19.99,
+                  "q3": 19.99,
+                  "max": 19.99,
+                  "sd": null,
+                  "avg": 19.99
+                }
+              }
+            }
+          }
+        ],
+        "initially_published_at": null,
+        "can_write": true,
+        "database_id": 2,
+        "enable_embedding": false,
+        "collection_id": null,
+        "query_type": "native",
+        "name": "Taux d'annulation global",
+        "last_used_at": "2026-10-09T14:06:29.510328Z",
+        "type": "question",
+        "query_average_duration": 33,
+        "creator_id": 1,
+        "moderation_reviews": [],
+        "updated_at": "2026-10-09T14:07:40.87295Z",
+        "made_public_by_id": null,
+        "embedding_params": null,
+        "cache_ttl": null,
+        "dataset_query": {
+          "database": 2,
+          "info": {
+            "card-entity-id": "6rMIlG5XenAlUA3INpCyq"
+          },
+          "type": "native",
+          "native": {
+            "template-tags": {
+              "date_filter": {
+                "type": "text",
+                "name": "date_filter",
+                "id": "9cabcf3e-b7a0-412b-9c83-ed303f20c391",
+                "display-name": "Date Filter"
+              }
+            },
+            "query": "SELECT\n    ROUND(\n        SUM(cancelled_transactions)::numeric\n        / NULLIF(SUM(total_transactions), 0)\n        * 100,\n        2\n    ) AS taux_annulation_pct\nFROM gold_daily_sales\nWHERE 1=1 [[AND {{date_filter}}]];"
+          }
+        },
+        "id": 41,
+        "parameter_mappings": [],
+        "display": "scalar",
+        "archived_directly": false,
+        "entity_id": "5tvQELE_lLf-KdgG6_qEp",
+        "collection_preview": true,
+        "visualization_settings": {
+          "column_settings": {
+            "[\"name\",\"taux_annulation_pct\"]": {
+              "suffix": "%"
+            }
+          }
+        },
+        "metabase_version": "v0.54.1 (774e5a3)",
+        "parameters": [
+          {
+            "id": "9cabcf3e-b7a0-412b-9c83-ed303f20c391",
+            "type": "category",
+            "target": [
+              "variable",
+              [
+                "template-tag",
+                "date_filter"
+              ]
+            ],
+            "name": "Date Filter",
+            "slug": "date_filter"
+          }
+        ],
+        "dashboard_id": 2,
+        "created_at": "2026-10-09T12:20:23.08905Z",
+        "public_uuid": null
+      },
+      "updated_at": "2026-10-09T12:20:23.108014Z",
+      "col": 18,
+      "id": 38,
+      "parameter_mappings": [],
+      "card_id": 41,
+      "entity_id": "9p9QIv76FeabxzXuiB5G6",
+      "visualization_settings": {},
+      "size_y": 3,
+      "dashboard_id": 2,
+      "created_at": "2026-10-09T12:20:23.108014Z",
+      "row": 0
+    },
+    {
+      "size_x": 24,
+      "dashboard_tab_id": 4,
+      "series": [],
+      "action_id": null,
+      "collection_authority_level": null,
+      "card": {
+        "cache_invalidated_at": null,
+        "description": null,
+        "archived": false,
+        "view_count": 23,
+        "collection_position": null,
+        "source_card_id": null,
+        "table_id": null,
+        "result_metadata": [
+          {
+            "display_name": "transaction_date",
+            "field_ref": [
+              "field",
+              "transaction_date",
+              {
+                "base-type": "type/Date"
+              }
+            ],
+            "base_type": "type/Date",
+            "effective_type": "type/Date",
+            "database_type": "date",
+            "name": "transaction_date",
+            "semantic_type": null,
+            "fingerprint": {
+              "global": {
+                "distinct-count": 273,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/DateTime": {
+                  "earliest": "2026-01-01",
+                  "latest": "2026-09-30"
+                }
+              }
+            }
+          },
+          {
+            "display_name": "ca",
+            "field_ref": [
+              "field",
+              "ca",
+              {
+                "base-type": "type/Decimal"
+              }
+            ],
+            "base_type": "type/Decimal",
+            "effective_type": "type/Decimal",
+            "database_type": "numeric",
+            "name": "ca",
+            "semantic_type": null,
+            "fingerprint": {
+              "global": {
+                "distinct-count": 273,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 7923298.19,
+                  "q1": 8233834.717964169,
+                  "q3": 8504865.943479309,
+                  "max": 8839729.83,
+                  "sd": 182562.53278658655,
+                  "avg": 8374287.4974358985
+                }
+              }
+            }
+          }
+        ],
+        "initially_published_at": null,
+        "can_write": true,
+        "database_id": 2,
+        "enable_embedding": false,
+        "collection_id": null,
+        "query_type": "native",
+        "name": "CA quotidien (30 derniers jours)",
+        "last_used_at": "2026-10-09T14:06:29.510328Z",
+        "type": "question",
+        "query_average_duration": 33,
+        "creator_id": 1,
+        "moderation_reviews": [],
+        "updated_at": "2026-10-09T14:07:40.87295Z",
+        "made_public_by_id": null,
+        "embedding_params": null,
+        "cache_ttl": null,
+        "dataset_query": {
+          "database": 2,
+          "info": {
+            "card-entity-id": "Bg3sISf6s193DOFAy8a2a"
+          },
+          "type": "native",
+          "native": {
+            "template-tags": {
+              "date_filter": {
+                "type": "text",
+                "name": "date_filter",
+                "id": "1c9ebdcd-83bd-401c-9d22-711aeb61925c",
+                "display-name": "Date Filter"
+              }
+            },
+            "query": "SELECT\n    transaction_date,\n    total_sales_amount AS ca\nFROM gold_daily_sales\nWHERE 1=1 [[AND {{date_filter}}]]\nORDER BY transaction_date;"
+          }
+        },
+        "id": 42,
+        "parameter_mappings": [],
+        "display": "combo",
+        "archived_directly": false,
+        "entity_id": "tk0B4gguC6PItcBH8RD41",
+        "collection_preview": true,
+        "visualization_settings": {
+          "graph.x_axis.scale": "timeseries",
+          "graph.dimensions": [
+            "transaction_date"
+          ],
+          "graph.metrics": [
+            "ca"
+          ]
+        },
+        "metabase_version": "v0.54.1 (774e5a3)",
+        "parameters": [
+          {
+            "id": "1c9ebdcd-83bd-401c-9d22-711aeb61925c",
+            "type": "category",
+            "target": [
+              "variable",
+              [
+                "template-tag",
+                "date_filter"
+              ]
+            ],
+            "name": "Date Filter",
+            "slug": "date_filter"
+          }
+        ],
+        "dashboard_id": 2,
+        "created_at": "2026-10-09T12:24:28.435248Z",
+        "public_uuid": null
+      },
+      "updated_at": "2026-10-09T12:44:03.911168Z",
+      "col": 0,
+      "id": 39,
+      "parameter_mappings": [],
+      "card_id": 42,
+      "entity_id": "Coj40RTv9eyHVkDYUjDHP",
+      "visualization_settings": {},
+      "size_y": 9,
+      "dashboard_id": 2,
+      "created_at": "2026-10-09T12:24:28.454483Z",
+      "row": 9
+    },
+    {
+      "size_x": 12,
+      "dashboard_tab_id": 4,
+      "series": [],
+      "action_id": null,
+      "collection_authority_level": null,
+      "card": {
+        "cache_invalidated_at": null,
+        "description": null,
+        "archived": false,
+        "view_count": 22,
+        "collection_position": null,
+        "source_card_id": null,
+        "table_id": null,
+        "result_metadata": [
+          {
+            "display_name": "category_name",
+            "field_ref": [
+              "field",
+              "category_name",
+              {
+                "base-type": "type/Text"
+              }
+            ],
+            "base_type": "type/Text",
+            "effective_type": "type/Text",
+            "database_type": "varchar",
+            "name": "category_name",
+            "semantic_type": null,
+            "fingerprint": {
+              "global": {
+                "distinct-count": 5,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Text": {
+                  "percent-json": 0.0,
+                  "percent-url": 0.0,
+                  "percent-email": 0.0,
+                  "percent-state": 0.0,
+                  "average-length": 7.0
+                }
+              }
+            }
+          },
+          {
+            "display_name": "ca",
+            "field_ref": [
+              "field",
+              "ca",
+              {
+                "base-type": "type/Decimal"
+              }
+            ],
+            "base_type": "type/Decimal",
+            "effective_type": "type/Decimal",
+            "database_type": "numeric",
+            "name": "ca",
+            "semantic_type": null,
+            "fingerprint": {
+              "global": {
+                "distinct-count": 5,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 123225353.93,
+                  "q1": 123449872.43,
+                  "q3": 127196433.975,
+                  "max": 130900233.63,
+                  "sd": 3119815.3142853477,
+                  "avg": 125665215.99000001
+                }
+              }
+            }
+          }
+        ],
+        "initially_published_at": null,
+        "can_write": true,
+        "database_id": 2,
+        "enable_embedding": false,
+        "collection_id": null,
+        "query_type": "native",
+        "name": "Top 5 catégories par CA",
+        "last_used_at": "2026-10-09T14:06:29.510328Z",
+        "type": "question",
+        "query_average_duration": 7,
+        "creator_id": 1,
+        "moderation_reviews": [],
+        "updated_at": "2026-10-09T14:07:40.87295Z",
+        "made_public_by_id": null,
+        "embedding_params": null,
+        "cache_ttl": null,
+        "dataset_query": {
+          "database": 2,
+          "info": {
+            "card-entity-id": "gf8F8wTY8zbwBR9gJf6u0"
+          },
+          "type": "native",
+          "native": {
+            "template-tags": {},
+            "query": "SELECT\n    category_name,\n    total_sales_amount AS ca\nFROM gold_sales_by_category\nORDER BY ca DESC\nLIMIT 5;"
+          }
+        },
+        "id": 43,
+        "parameter_mappings": [],
+        "display": "bar",
+        "archived_directly": false,
+        "entity_id": "mxSir_qkjzr9kF82EPEmB",
+        "collection_preview": true,
+        "visualization_settings": {
+          "graph.x_axis.scale": "ordinal",
+          "graph.dimensions": [
+            "category_name"
+          ],
+          "graph.metrics": [
+            "ca"
+          ]
+        },
+        "metabase_version": "v0.54.1 (774e5a3)",
+        "parameters": [],
+        "dashboard_id": 2,
+        "created_at": "2026-10-09T12:26:26.961738Z",
+        "public_uuid": null
+      },
+      "updated_at": "2026-10-09T12:44:03.911168Z",
+      "col": 0,
+      "id": 40,
+      "parameter_mappings": [],
+      "card_id": 43,
+      "entity_id": "ATCd_rgId-c8A4ZyFKMDl",
+      "visualization_settings": {},
+      "size_y": 6,
+      "dashboard_id": 2,
+      "created_at": "2026-10-09T12:26:26.998249Z",
+      "row": 3
+    },
+    {
+      "size_x": 24,
+      "dashboard_tab_id": 4,
+      "series": [],
+      "action_id": null,
+      "collection_authority_level": null,
+      "card": {
+        "cache_invalidated_at": null,
+        "description": null,
+        "archived": false,
+        "view_count": 21,
+        "collection_position": null,
+        "source_card_id": null,
+        "table_id": null,
+        "result_metadata": [
+          {
+            "display_name": "transaction_date",
+            "field_ref": [
+              "field",
+              "transaction_date",
+              {
+                "base-type": "type/Date"
+              }
+            ],
+            "base_type": "type/Date",
+            "effective_type": "type/Date",
+            "database_type": "date",
+            "name": "transaction_date",
+            "semantic_type": null,
+            "fingerprint": {
+              "global": {
+                "distinct-count": 273,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/DateTime": {
+                  "earliest": "2026-01-01",
+                  "latest": "2026-09-30"
+                }
+              }
+            }
+          },
+          {
+            "display_name": "ca",
+            "field_ref": [
+              "field",
+              "ca",
+              {
+                "base-type": "type/Decimal"
+              }
+            ],
+            "base_type": "type/Decimal",
+            "effective_type": "type/Decimal",
+            "database_type": "numeric",
+            "name": "ca",
+            "semantic_type": null,
+            "fingerprint": {
+              "global": {
+                "distinct-count": 273,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 7923298.19,
+                  "q1": 8233834.717964169,
+                  "q3": 8504865.943479309,
+                  "max": 8839729.83,
+                  "sd": 182562.53278658655,
+                  "avg": 8374287.4974358985
+                }
+              }
+            }
+          },
+          {
+            "display_name": "annulations",
+            "field_ref": [
+              "field",
+              "annulations",
+              {
+                "base-type": "type/BigInteger"
+              }
+            ],
+            "base_type": "type/BigInteger",
+            "effective_type": "type/BigInteger",
+            "database_type": "int8",
+            "name": "annulations",
+            "semantic_type": null,
+            "fingerprint": {
+              "global": {
+                "distinct-count": 104,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 647.0,
+                  "q1": 710.8075884171761,
+                  "q3": 745.5467874600105,
+                  "max": 810.0,
+                  "sd": 27.36967027840948,
+                  "avg": 728.7032967032967
+                }
+              }
+            }
+          },
+          {
+            "display_name": "ventes",
+            "field_ref": [
+              "field",
+              "ventes",
+              {
+                "base-type": "type/BigInteger"
+              }
+            ],
+            "base_type": "type/BigInteger",
+            "effective_type": "type/BigInteger",
+            "database_type": "int8",
+            "name": "ventes",
+            "semantic_type": null,
+            "fingerprint": {
+              "global": {
+                "distinct-count": 143,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 2770.0,
+                  "q1": 2883.458333333333,
+                  "q3": 2951.3050682078706,
+                  "max": 3065.0,
+                  "sd": 50.33224747182474,
+                  "avg": 2917.5421245421244
+                }
+              }
+            }
+          }
+        ],
+        "initially_published_at": null,
+        "can_write": true,
+        "database_id": 2,
+        "enable_embedding": false,
+        "collection_id": null,
+        "query_type": "native",
+        "name": "CA vs Annulations (double axe)",
+        "last_used_at": "2026-10-09T14:06:29.510328Z",
+        "type": "question",
+        "query_average_duration": 34,
+        "creator_id": 1,
+        "moderation_reviews": [],
+        "updated_at": "2026-10-09T14:07:40.87295Z",
+        "made_public_by_id": null,
+        "embedding_params": null,
+        "cache_ttl": null,
+        "dataset_query": {
+          "database": 2,
+          "info": {
+            "card-entity-id": "JP5EkHGYoZCmMktWDH5He"
+          },
+          "type": "native",
+          "native": {
+            "template-tags": {
+              "date_filter": {
+                "type": "text",
+                "name": "date_filter",
+                "id": "36b651a5-be5b-42f6-a01f-2221af232caa",
+                "display-name": "Date Filter"
+              }
+            },
+            "query": "SELECT\n    transaction_date,\n    total_sales_amount       AS ca,\n    cancelled_transactions   AS annulations,\n    completed_transactions   AS ventes\nFROM gold_daily_sales\nWHERE 1=1 [[AND {{date_filter}}]]\nORDER BY transaction_date;"
+          }
+        },
+        "id": 44,
+        "parameter_mappings": [],
+        "display": "combo",
+        "archived_directly": false,
+        "entity_id": "U5sbWQnnV4Iyyb39jCqiZ",
+        "collection_preview": true,
+        "visualization_settings": {
+          "series_settings": {
+            "ventes": {
+              "color": "#51528D"
+            },
+            "ca": {
+              "color": "#689636"
+            },
+            "annulations": {
+              "color": "#E75454"
+            }
+          },
+          "graph.x_axis.scale": "timeseries",
+          "graph.dimensions": [
+            "transaction_date"
+          ],
+          "graph.metrics": [
+            "ca",
+            "annulations",
+            "ventes"
+          ]
+        },
+        "metabase_version": "v0.54.1 (774e5a3)",
+        "parameters": [
+          {
+            "id": "36b651a5-be5b-42f6-a01f-2221af232caa",
+            "type": "category",
+            "target": [
+              "variable",
+              [
+                "template-tag",
+                "date_filter"
+              ]
+            ],
+            "name": "Date Filter",
+            "slug": "date_filter"
+          }
+        ],
+        "dashboard_id": 2,
+        "created_at": "2026-10-09T12:30:48.832765Z",
+        "public_uuid": null
+      },
+      "updated_at": "2026-10-09T12:44:03.911168Z",
+      "col": 0,
+      "id": 41,
+      "parameter_mappings": [],
+      "card_id": 44,
+      "entity_id": "9iA_N873Fx-QLGbyOyIMu",
+      "visualization_settings": {
+        "series_settings": {
+          "ventes": {
+            "color": "#51528D"
+          },
+          "ca": {
+            "color": "#689636"
+          },
+          "annulations": {
+            "color": "#E75454"
+          }
+        },
+        "graph.x_axis.scale": "timeseries",
+        "graph.dimensions": [
+          "transaction_date"
+        ],
+        "card.hide_empty": false,
+        "graph.metrics": [
+          "ca",
+          "annulations",
+          "ventes"
+        ]
+      },
+      "size_y": 9,
+      "dashboard_id": 2,
+      "created_at": "2026-10-09T12:30:48.850869Z",
+      "row": 18
+    },
+    {
+      "size_x": 24,
+      "dashboard_tab_id": 4,
+      "series": [],
+      "action_id": null,
+      "collection_authority_level": null,
+      "card": {
+        "cache_invalidated_at": null,
+        "description": null,
+        "archived": false,
+        "view_count": 19,
+        "collection_position": null,
+        "source_card_id": null,
+        "table_id": null,
+        "result_metadata": [
+          {
+            "display_name": "transaction_date",
+            "field_ref": [
+              "field",
+              "transaction_date",
+              {
+                "base-type": "type/Date"
+              }
+            ],
+            "base_type": "type/Date",
+            "effective_type": "type/Date",
+            "database_type": "date",
+            "name": "transaction_date",
+            "semantic_type": null,
+            "fingerprint": {
+              "global": {
+                "distinct-count": 273,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/DateTime": {
+                  "earliest": "2026-01-01",
+                  "latest": "2026-09-30"
+                }
+              }
+            }
+          },
+          {
+            "display_name": "taux_annulation_pct",
+            "field_ref": [
+              "field",
+              "taux_annulation_pct",
+              {
+                "base-type": "type/Decimal"
+              }
+            ],
+            "base_type": "type/Decimal",
+            "effective_type": "type/Decimal",
+            "database_type": "numeric",
+            "name": "taux_annulation_pct",
+            "semantic_type": null,
+            "fingerprint": {
+              "global": {
+                "distinct-count": 173,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 18.35,
+                  "q1": 19.549547372047307,
+                  "q3": 20.44622858668498,
+                  "max": 22.17,
+                  "sd": 0.6747657298790274,
+                  "avg": 19.984798534798536
+                }
+              }
+            }
+          }
+        ],
+        "initially_published_at": null,
+        "can_write": true,
+        "database_id": 2,
+        "enable_embedding": false,
+        "collection_id": null,
+        "query_type": "native",
+        "name": "Évolution du taux d'annulation",
+        "last_used_at": "2026-10-09T14:06:29.510328Z",
+        "type": "question",
+        "query_average_duration": 31,
+        "creator_id": 1,
+        "moderation_reviews": [],
+        "updated_at": "2026-10-09T14:07:40.87295Z",
+        "made_public_by_id": null,
+        "embedding_params": null,
+        "cache_ttl": null,
+        "dataset_query": {
+          "database": 2,
+          "info": {
+            "card-entity-id": "YiTuGlUv4suo8dbZa0yb1"
+          },
+          "type": "native",
+          "native": {
+            "template-tags": {
+              "date_filter": {
+                "type": "text",
+                "name": "date_filter",
+                "id": "73692036-0b39-47c5-b7a0-01e731e8d062",
+                "display-name": "Date Filter"
+              }
+            },
+            "query": "SELECT\n    transaction_date,\n    cancellation_rate_pct AS taux_annulation_pct\nFROM gold_daily_sales\nWHERE 1=1 [[AND {{date_filter}}]]\nORDER BY transaction_date;"
+          }
+        },
+        "id": 45,
+        "parameter_mappings": [],
+        "display": "line",
+        "archived_directly": false,
+        "entity_id": "7T0YtrwdTQTri-kVpOaxv",
+        "collection_preview": true,
+        "visualization_settings": {
+          "series_settings": {
+            "taux_annulation_pct": {
+              "color": "#E75454"
+            }
+          },
+          "graph.x_axis.scale": "timeseries",
+          "graph.dimensions": [
+            "transaction_date"
+          ],
+          "graph.metrics": [
+            "taux_annulation_pct"
+          ]
+        },
+        "metabase_version": "v0.54.1 (774e5a3)",
+        "parameters": [
+          {
+            "id": "73692036-0b39-47c5-b7a0-01e731e8d062",
+            "type": "category",
+            "target": [
+              "variable",
+              [
+                "template-tag",
+                "date_filter"
+              ]
+            ],
+            "name": "Date Filter",
+            "slug": "date_filter"
+          }
+        ],
+        "dashboard_id": 2,
+        "created_at": "2026-10-09T12:34:58.068906Z",
+        "public_uuid": null
+      },
+      "updated_at": "2026-10-09T12:44:03.911168Z",
+      "col": 0,
+      "id": 42,
+      "parameter_mappings": [],
+      "card_id": 45,
+      "entity_id": "4JlCWc3eihC3UbkJ4b-fB",
+      "visualization_settings": {},
+      "size_y": 10,
+      "dashboard_id": 2,
+      "created_at": "2026-10-09T12:34:58.087635Z",
+      "row": 27
+    },
+    {
+      "size_x": 12,
+      "dashboard_tab_id": 4,
+      "series": [],
+      "action_id": null,
+      "collection_authority_level": null,
+      "card": {
+        "cache_invalidated_at": null,
+        "description": null,
+        "archived": false,
+        "view_count": 18,
+        "collection_position": null,
+        "source_card_id": null,
+        "table_id": null,
+        "result_metadata": [
+          {
+            "display_name": "jour_semaine",
+            "field_ref": [
+              "field",
+              "jour_semaine",
+              {
+                "base-type": "type/Text"
+              }
+            ],
+            "base_type": "type/Text",
+            "effective_type": "type/Text",
+            "database_type": "text",
+            "name": "jour_semaine",
+            "semantic_type": null,
+            "fingerprint": {
+              "global": {
+                "distinct-count": 7,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Text": {
+                  "percent-json": 0.0,
+                  "percent-url": 0.0,
+                  "percent-email": 0.0,
+                  "percent-state": 0.0,
+                  "average-length": 9.0
+                }
+              }
+            }
+          },
+          {
+            "display_name": "ordre",
+            "field_ref": [
+              "field",
+              "ordre",
+              {
+                "base-type": "type/Decimal"
+              }
+            ],
+            "base_type": "type/Decimal",
+            "effective_type": "type/Decimal",
+            "database_type": "numeric",
+            "name": "ordre",
+            "semantic_type": null,
+            "fingerprint": {
+              "global": {
+                "distinct-count": 7,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 1.0,
+                  "q1": 2.25,
+                  "q3": 5.75,
+                  "max": 7.0,
+                  "sd": 2.160246899469287,
+                  "avg": 4.0
+                }
+              }
+            }
+          },
+          {
+            "display_name": "ca",
+            "field_ref": [
+              "field",
+              "ca",
+              {
+                "base-type": "type/Decimal"
+              }
+            ],
+            "base_type": "type/Decimal",
+            "effective_type": "type/Decimal",
+            "database_type": "numeric",
+            "name": "ca",
+            "semantic_type": null,
+            "fingerprint": {
+              "global": {
+                "distinct-count": 7,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 323299946.9,
+                  "q1": 325991132.82,
+                  "q3": 327540674.2825,
+                  "max": 329445223.05,
+                  "sd": 1871212.2149888373,
+                  "avg": 326597212.4
+                }
+              }
+            }
+          },
+          {
+            "display_name": "transactions",
+            "field_ref": [
+              "field",
+              "transactions",
+              {
+                "base-type": "type/Decimal"
+              }
+            ],
+            "base_type": "type/Decimal",
+            "effective_type": "type/Decimal",
+            "database_type": "numeric",
+            "name": "transactions",
+            "semantic_type": null,
+            "fingerprint": {
+              "global": {
+                "distinct-count": 7,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 141702.0,
+                  "q1": 141809.0,
+                  "q3": 142623.0,
+                  "max": 142775.0,
+                  "sd": 432.1750637349241,
+                  "avg": 142203.57142857142
+                }
+              }
+            }
+          }
+        ],
+        "initially_published_at": null,
+        "can_write": true,
+        "database_id": 2,
+        "enable_embedding": false,
+        "collection_id": null,
+        "query_type": "native",
+        "name": "Répartition hebdomadaire par jour de la semaine",
+        "last_used_at": "2026-10-09T14:06:29.510328Z",
+        "type": "question",
+        "query_average_duration": 33,
+        "creator_id": 1,
+        "moderation_reviews": [],
+        "updated_at": "2026-10-09T14:07:40.87295Z",
+        "made_public_by_id": null,
+        "embedding_params": null,
+        "cache_ttl": null,
+        "dataset_query": {
+          "database": 2,
+          "info": {
+            "card-entity-id": "Cs4bD81FNJ8pqj-Ec2zp6"
+          },
+          "type": "native",
+          "native": {
+            "template-tags": {
+              "date_filter": {
+                "type": "text",
+                "name": "date_filter",
+                "id": "7f9e8530-e32b-4a77-9b3f-109a482ee6b5",
+                "display-name": "Date Filter"
+              }
+            },
+            "query": "SELECT\n    TO_CHAR(transaction_date, 'Day') AS jour_semaine,\n    EXTRACT(ISODOW FROM transaction_date) AS ordre,\n    SUM(total_sales_amount) AS ca,\n    SUM(total_transactions) AS transactions\nFROM gold_daily_sales\nWHERE 1=1 [[AND {{date_filter}}]]\nGROUP BY 1, 2\nORDER BY ordre;"
+          }
+        },
+        "id": 46,
+        "parameter_mappings": [],
+        "display": "bar",
+        "archived_directly": false,
+        "entity_id": "hI3iZJSascYIDnheC6qDN",
+        "collection_preview": true,
+        "visualization_settings": {
+          "series_settings": {
+            "ca": {
+              "color": "#689636"
+            },
+            "ordre": {
+              "color": "#FAFAFB"
+            },
+            "transactions": {
+              "color": "#227FD2"
+            }
+          },
+          "graph.x_axis.scale": "ordinal",
+          "graph.dimensions": [
+            "jour_semaine"
+          ],
+          "graph.metrics": [
+            "ordre",
+            "ca",
+            "transactions"
+          ]
+        },
+        "metabase_version": "v0.54.1 (774e5a3)",
+        "parameters": [
+          {
+            "id": "7f9e8530-e32b-4a77-9b3f-109a482ee6b5",
+            "type": "category",
+            "target": [
+              "variable",
+              [
+                "template-tag",
+                "date_filter"
+              ]
+            ],
+            "name": "Date Filter",
+            "slug": "date_filter"
+          }
+        ],
+        "dashboard_id": 2,
+        "created_at": "2026-10-09T12:40:06.887214Z",
+        "public_uuid": null
+      },
+      "updated_at": "2026-10-09T12:44:03.911168Z",
+      "col": 12,
+      "id": 43,
+      "parameter_mappings": [],
+      "card_id": 46,
+      "entity_id": "EptVvKQpKgy8O1sN27-RB",
+      "visualization_settings": {},
+      "size_y": 6,
+      "dashboard_id": 2,
+      "created_at": "2026-10-09T12:40:06.909056Z",
+      "row": 3
+    },
+    {
+      "size_x": 12,
+      "dashboard_tab_id": 4,
+      "series": [],
+      "action_id": null,
+      "collection_authority_level": null,
+      "card": {
+        "cache_invalidated_at": null,
+        "description": null,
+        "archived": false,
+        "view_count": 16,
+        "collection_position": null,
+        "source_card_id": null,
+        "table_id": null,
+        "result_metadata": [
+          {
+            "display_name": "product_name",
+            "field_ref": [
+              "field",
+              "product_name",
+              {
+                "base-type": "type/Text"
+              }
+            ],
+            "base_type": "type/Text",
+            "effective_type": "type/Text",
+            "database_type": "varchar",
+            "name": "product_name",
+            "semantic_type": null,
+            "fingerprint": {
+              "global": {
+                "distinct-count": 10,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Text": {
+                  "percent-json": 0.0,
+                  "percent-url": 0.0,
+                  "percent-email": 0.0,
+                  "percent-state": 0.0,
+                  "average-length": 11.9
+                }
+              }
+            }
+          },
+          {
+            "display_name": "ca",
+            "field_ref": [
+              "field",
+              "ca",
+              {
+                "base-type": "type/Decimal"
+              }
+            ],
+            "base_type": "type/Decimal",
+            "effective_type": "type/Decimal",
+            "database_type": "numeric",
+            "name": "ca",
+            "semantic_type": null,
+            "fingerprint": {
+              "global": {
+                "distinct-count": 10,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 1024599.15,
+                  "q1": 1027540.86,
+                  "q3": 1067309.08,
+                  "max": 1092189.35,
+                  "sd": 23256.26165311876,
+                  "avg": 1051092.199
+                }
+              }
+            }
+          },
+          {
+            "display_name": "quantite",
+            "field_ref": [
+              "field",
+              "quantite",
+              {
+                "base-type": "type/BigInteger"
+              }
+            ],
+            "base_type": "type/BigInteger",
+            "effective_type": "type/BigInteger",
+            "database_type": "int8",
+            "name": "quantite",
+            "semantic_type": null,
+            "fingerprint": {
+              "global": {
+                "distinct-count": 9,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 551.0,
+                  "q1": 560.0,
+                  "q3": 576.0,
+                  "max": 611.0,
+                  "sd": 19.028925350633966,
+                  "avg": 570.9
+                }
+              }
+            }
+          },
+          {
+            "display_name": "clients_uniques",
+            "field_ref": [
+              "field",
+              "clients_uniques",
+              {
+                "base-type": "type/BigInteger"
+              }
+            ],
+            "base_type": "type/BigInteger",
+            "effective_type": "type/BigInteger",
+            "database_type": "int8",
+            "name": "clients_uniques",
+            "semantic_type": null,
+            "fingerprint": {
+              "global": {
+                "distinct-count": 7,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 179.0,
+                  "q1": 179.75,
+                  "q3": 185.0,
+                  "max": 203.0,
+                  "sd": 7.430417963419764,
+                  "avg": 184.1
+                }
+              }
+            }
+          }
+        ],
+        "initially_published_at": null,
+        "can_write": true,
+        "database_id": 2,
+        "enable_embedding": false,
+        "collection_id": null,
+        "query_type": "native",
+        "name": "Top 10 produits par CA",
+        "last_used_at": "2026-10-09T14:06:29.510328Z",
+        "type": "question",
+        "query_average_duration": 12,
+        "creator_id": 1,
+        "moderation_reviews": [],
+        "updated_at": "2026-10-09T14:07:40.87295Z",
+        "made_public_by_id": null,
+        "embedding_params": null,
+        "cache_ttl": null,
+        "dataset_query": {
+          "database": 2,
+          "info": {
+            "card-entity-id": "LGYxW1WcEJkuNtnu48zYC"
+          },
+          "type": "native",
+          "native": {
+            "template-tags": {},
+            "query": "SELECT\n    product_name,\n    total_sales_amount       AS ca,\n    completed_quantity       AS quantite,\n    unique_completed_customers AS clients_uniques\nFROM gold_sales_by_product\nORDER BY ca DESC\nLIMIT 10;"
+          }
+        },
+        "id": 47,
+        "parameter_mappings": [],
+        "display": "bar",
+        "archived_directly": false,
+        "entity_id": "KoTa2KrAVRcRiURaOUWPt",
+        "collection_preview": true,
+        "visualization_settings": {
+          "graph.dimensions": [
+            "product_name"
+          ],
+          "series_settings": {
+            "quantite": {
+              "color": "#7172AD"
+            },
+            "ca": {
+              "color": "#88BF4D"
+            }
+          },
+          "graph.x_axis.scale": "ordinal",
+          "graph.metrics": [
+            "ca",
+            "quantite"
+          ]
+        },
+        "metabase_version": "v0.54.1 (774e5a3)",
+        "parameters": [],
+        "dashboard_id": 2,
+        "created_at": "2026-10-09T13:04:03.964168Z",
+        "public_uuid": null
+      },
+      "updated_at": "2026-10-09T13:04:41.49449Z",
+      "col": 0,
+      "id": 44,
+      "parameter_mappings": [],
+      "card_id": 47,
+      "entity_id": "45oeYsdFvtNFY9HocBVQo",
+      "visualization_settings": {},
+      "size_y": 8,
+      "dashboard_id": 2,
+      "created_at": "2026-10-09T13:04:03.978471Z",
+      "row": 37
+    },
+    {
+      "size_x": 12,
+      "dashboard_tab_id": 4,
+      "series": [],
+      "action_id": null,
+      "collection_authority_level": null,
+      "card": {
+        "cache_invalidated_at": null,
+        "description": null,
+        "archived": false,
+        "view_count": 15,
+        "collection_position": null,
+        "source_card_id": null,
+        "table_id": null,
+        "result_metadata": [
+          {
+            "display_name": "category_name",
+            "field_ref": [
+              "field",
+              "category_name",
+              {
+                "base-type": "type/Text"
+              }
+            ],
+            "base_type": "type/Text",
+            "effective_type": "type/Text",
+            "database_type": "varchar",
+            "name": "category_name",
+            "semantic_type": null,
+            "fingerprint": {
+              "global": {
+                "distinct-count": 20,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Text": {
+                  "percent-json": 0.0,
+                  "percent-url": 0.0,
+                  "percent-email": 0.0,
+                  "percent-state": 0.0,
+                  "average-length": 7.05
+                }
+              }
+            }
+          },
+          {
+            "display_name": "ca",
+            "field_ref": [
+              "field",
+              "ca",
+              {
+                "base-type": "type/Decimal"
+              }
+            ],
+            "base_type": "type/Decimal",
+            "effective_type": "type/Decimal",
+            "database_type": "numeric",
+            "name": "ca",
+            "semantic_type": null,
+            "fingerprint": {
+              "global": {
+                "distinct-count": 20,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 99338980.46,
+                  "q1": 106946216.43,
+                  "q3": 121381575.18,
+                  "max": 130900233.63,
+                  "sd": 8683817.120472897,
+                  "avg": 114309024.34
+                }
+              }
+            }
+          }
+        ],
+        "initially_published_at": null,
+        "can_write": true,
+        "database_id": 2,
+        "enable_embedding": false,
+        "collection_id": null,
+        "query_type": "native",
+        "name": "Répartition du CA par catégorie",
+        "last_used_at": "2026-10-09T14:06:29.510328Z",
+        "type": "question",
+        "query_average_duration": 9,
+        "creator_id": 1,
+        "moderation_reviews": [],
+        "updated_at": "2026-10-09T14:07:40.87295Z",
+        "made_public_by_id": null,
+        "embedding_params": null,
+        "cache_ttl": null,
+        "dataset_query": {
+          "database": 2,
+          "info": {
+            "card-entity-id": "YjsadFTGJaH-nLDY_anUV"
+          },
+          "type": "native",
+          "native": {
+            "template-tags": {},
+            "query": "SELECT\n    category_name,\n    total_sales_amount AS ca\nFROM gold_sales_by_category\nORDER BY ca DESC;"
+          }
+        },
+        "id": 48,
+        "parameter_mappings": [],
+        "display": "pie",
+        "archived_directly": false,
+        "entity_id": "PvVWKNtPP3MPit8O7SBq1",
+        "collection_preview": true,
+        "visualization_settings": {
+          "pie.percent_visibility": "both",
+          "pie.decimal_places": 2
+        },
+        "metabase_version": "v0.54.1 (774e5a3)",
+        "parameters": [],
+        "dashboard_id": 2,
+        "created_at": "2026-10-09T13:06:52.117966Z",
+        "public_uuid": null
+      },
+      "updated_at": "2026-10-09T13:07:35.709788Z",
+      "col": 12,
+      "id": 45,
+      "parameter_mappings": [],
+      "card_id": 48,
+      "entity_id": "7jAobVLBNcmhFFfruDsxR",
+      "visualization_settings": {
+        "pie.percent_visibility": "both",
+        "pie.decimal_places": 2
+      },
+      "size_y": 8,
+      "dashboard_id": 2,
+      "created_at": "2026-10-09T13:06:52.13536Z",
+      "row": 37
+    },
+    {
+      "size_x": 24,
+      "dashboard_tab_id": 4,
+      "series": [],
+      "action_id": null,
+      "collection_authority_level": null,
+      "card": {
+        "cache_invalidated_at": null,
+        "description": null,
+        "archived": false,
+        "view_count": 14,
+        "collection_position": null,
+        "source_card_id": null,
+        "table_id": null,
+        "result_metadata": [
+          {
+            "display_name": "category_name",
+            "field_ref": [
+              "field",
+              "category_name",
+              {
+                "base-type": "type/Text"
+              }
+            ],
+            "base_type": "type/Text",
+            "effective_type": "type/Text",
+            "database_type": "varchar",
+            "name": "category_name",
+            "semantic_type": null,
+            "fingerprint": {
+              "global": {
+                "distinct-count": 20,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Text": {
+                  "percent-json": 0.0,
+                  "percent-url": 0.0,
+                  "percent-email": 0.0,
+                  "percent-state": 0.0,
+                  "average-length": 7.05
+                }
+              }
+            }
+          },
+          {
+            "display_name": "transactions",
+            "field_ref": [
+              "field",
+              "transactions",
+              {
+                "base-type": "type/BigInteger"
+              }
+            ],
+            "base_type": "type/BigInteger",
+            "effective_type": "type/BigInteger",
+            "database_type": "int8",
+            "name": "transactions",
+            "semantic_type": null,
+            "fingerprint": {
+              "global": {
+                "distinct-count": 20,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 42960.0,
+                  "q1": 47440.0,
+                  "q3": 52486.0,
+                  "max": 54519.0,
+                  "sd": 3305.8730971122477,
+                  "avg": 49771.25
+                }
+              }
+            }
+          },
+          {
+            "display_name": "ca",
+            "field_ref": [
+              "field",
+              "ca",
+              {
+                "base-type": "type/Decimal"
+              }
+            ],
+            "base_type": "type/Decimal",
+            "effective_type": "type/Decimal",
+            "database_type": "numeric",
+            "name": "ca",
+            "semantic_type": null,
+            "fingerprint": {
+              "global": {
+                "distinct-count": 20,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 99338980.46,
+                  "q1": 106946216.43,
+                  "q3": 121381575.18,
+                  "max": 130900233.63,
+                  "sd": 8683817.120472897,
+                  "avg": 114309024.34
+                }
+              }
+            }
+          },
+          {
+            "display_name": "panier_moyen",
+            "field_ref": [
+              "field",
+              "panier_moyen",
+              {
+                "base-type": "type/Decimal"
+              }
+            ],
+            "base_type": "type/Decimal",
+            "effective_type": "type/Decimal",
+            "database_type": "numeric",
+            "name": "panier_moyen",
+            "semantic_type": null,
+            "fingerprint": {
+              "global": {
+                "distinct-count": 20,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 2635.47,
+                  "q1": 2782.33,
+                  "q3": 2936.13,
+                  "max": 3082.77,
+                  "sd": 119.41225429049084,
+                  "avg": 2870.9469999999997
+                }
+              }
+            }
+          },
+          {
+            "display_name": "quantite_vendue",
+            "field_ref": [
+              "field",
+              "quantite_vendue",
+              {
+                "base-type": "type/BigInteger"
+              }
+            ],
+            "base_type": "type/BigInteger",
+            "effective_type": "type/BigInteger",
+            "database_type": "int8",
+            "name": "quantite_vendue",
+            "semantic_type": null,
+            "fingerprint": {
+              "global": {
+                "distinct-count": 20,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 103012.0,
+                  "q1": 113922.5,
+                  "q3": 125576.5,
+                  "max": 131374.0,
+                  "sd": 7952.619196975626,
+                  "avg": 119243.75
+                }
+              }
+            }
+          },
+          {
+            "display_name": "taux_annulation_pct",
+            "field_ref": [
+              "field",
+              "taux_annulation_pct",
+              {
+                "base-type": "type/Decimal"
+              }
+            ],
+            "base_type": "type/Decimal",
+            "effective_type": "type/Decimal",
+            "database_type": "numeric",
+            "name": "taux_annulation_pct",
+            "semantic_type": null,
+            "fingerprint": {
+              "global": {
+                "distinct-count": 17,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 19.36,
+                  "q1": 19.835,
+                  "q3": 20.15828427124746,
+                  "max": 20.28,
+                  "sd": 0.22726288973924402,
+                  "avg": 19.982
+                }
+              }
+            }
+          }
+        ],
+        "initially_published_at": null,
+        "can_write": true,
+        "database_id": 2,
+        "enable_embedding": false,
+        "collection_id": null,
+        "query_type": "native",
+        "name": "Matrice catégorie × panier moyen",
+        "last_used_at": "2026-10-09T14:06:29.510328Z",
+        "type": "question",
+        "query_average_duration": 8,
+        "creator_id": 1,
+        "moderation_reviews": [],
+        "updated_at": "2026-10-09T14:07:40.87295Z",
+        "made_public_by_id": null,
+        "embedding_params": null,
+        "cache_ttl": null,
+        "dataset_query": {
+          "database": 2,
+          "info": {
+            "card-entity-id": "yYEdkh-pqwywTzOOEBUFu"
+          },
+          "type": "native",
+          "native": {
+            "template-tags": {},
+            "query": "SELECT\n    category_name,\n    total_transactions            AS transactions,\n    total_sales_amount            AS ca,\n    avg_completed_transaction_amount AS panier_moyen,\n    completed_quantity            AS quantite_vendue,\n    cancellation_rate_pct         AS taux_annulation_pct\nFROM gold_sales_by_category\nORDER BY ca DESC;"
+          }
+        },
+        "id": 49,
+        "parameter_mappings": [],
+        "display": "table",
+        "archived_directly": false,
+        "entity_id": "977Kiy4jVuDQuI9o9aTPi",
+        "collection_preview": true,
+        "visualization_settings": {
+          "table.pivot_column": "transactions",
+          "table.cell_column": "ca"
+        },
+        "metabase_version": "v0.54.1 (774e5a3)",
+        "parameters": [],
+        "dashboard_id": 2,
+        "created_at": "2026-10-09T13:09:12.732718Z",
+        "public_uuid": null
+      },
+      "updated_at": "2026-10-09T14:07:40.87295Z",
+      "col": 0,
+      "id": 46,
+      "parameter_mappings": [],
+      "card_id": 49,
+      "entity_id": "dUok56CwOReJzkK3oOQAz",
+      "visualization_settings": {
+        "table.pivot_column": "transactions",
+        "table.cell_column": "ca",
+        "column_settings": {
+          "[\"name\",\"ca\"]": {
+            "number_style": "currency",
+            "currency": "EUR",
+            "currency_style": "symbol",
+            "number_separators": ".,"
+          },
+          "[\"name\",\"panier_moyen\"]": {
+            "number_style": "currency",
+            "currency": "EUR"
+          }
+        }
+      },
+      "size_y": 8,
+      "dashboard_id": 2,
+      "created_at": "2026-10-09T13:09:12.751749Z",
+      "row": 45
+    },
+    {
+      "size_x": 24,
+      "dashboard_tab_id": 4,
+      "series": [],
+      "action_id": null,
+      "collection_authority_level": null,
+      "card": {
+        "cache_invalidated_at": null,
+        "description": null,
+        "archived": false,
+        "view_count": 11,
+        "collection_position": null,
+        "source_card_id": null,
+        "table_id": null,
+        "result_metadata": [
+          {
+            "display_name": "product_name",
+            "field_ref": [
+              "field",
+              "product_name",
+              {
+                "base-type": "type/Text"
+              }
+            ],
+            "base_type": "type/Text",
+            "effective_type": "type/Text",
+            "database_type": "varchar",
+            "name": "product_name",
+            "semantic_type": null,
+            "fingerprint": {
+              "global": {
+                "distinct-count": 2000,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Text": {
+                  "percent-json": 0.0,
+                  "percent-url": 0.0,
+                  "percent-email": 0.0,
+                  "percent-state": 0.0,
+                  "average-length": 11.7675
+                }
+              }
+            }
+          },
+          {
+            "display_name": "quantite",
+            "field_ref": [
+              "field",
+              "quantite",
+              {
+                "base-type": "type/BigInteger"
+              }
+            ],
+            "base_type": "type/BigInteger",
+            "effective_type": "type/BigInteger",
+            "database_type": "int8",
+            "name": "quantite",
+            "semantic_type": null,
+            "fingerprint": {
+              "global": {
+                "distinct-count": 229,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 344.0,
+                  "q1": 447.92386572803105,
+                  "q3": 507.5844349708935,
+                  "max": 637.0,
+                  "sd": 43.78000299740098,
+                  "avg": 478.0905
+                }
+              }
+            }
+          },
+          {
+            "display_name": "panier_moyen",
+            "field_ref": [
+              "field",
+              "panier_moyen",
+              {
+                "base-type": "type/Decimal"
+              }
+            ],
+            "base_type": "type/Decimal",
+            "effective_type": "type/Decimal",
+            "database_type": "numeric",
+            "name": "panier_moyen",
+            "semantic_type": null,
+            "fingerprint": {
+              "global": {
+                "distinct-count": 1998,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 14.14,
+                  "q1": 1383.4829781382439,
+                  "q3": 4245.07543235863,
+                  "max": 6204.45,
+                  "sd": 1631.8944573380409,
+                  "avg": 2836.36408
+                }
+              }
+            }
+          },
+          {
+            "display_name": "ca",
+            "field_ref": [
+              "field",
+              "ca",
+              {
+                "base-type": "type/Decimal"
+              }
+            ],
+            "base_type": "type/Decimal",
+            "effective_type": "type/Decimal",
+            "database_type": "numeric",
+            "name": "ca",
+            "semantic_type": null,
+            "fingerprint": {
+              "global": {
+                "distinct-count": 2000,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 2233.56,
+                  "q1": 221928.33387351382,
+                  "q3": 670776.330111946,
+                  "max": 1067309.08,
+                  "sd": 263443.19379047846,
+                  "avg": 452873.40524
+                }
+              }
+            }
+          }
+        ],
+        "initially_published_at": null,
+        "can_write": true,
+        "database_id": 2,
+        "enable_embedding": false,
+        "collection_id": null,
+        "query_type": "native",
+        "name": "Scatter : volume vs panier moyen (par produit)",
+        "last_used_at": "2026-10-09T14:06:29.510328Z",
+        "type": "question",
+        "query_average_duration": 22,
+        "creator_id": 1,
+        "moderation_reviews": [],
+        "updated_at": "2026-10-09T14:07:40.87295Z",
+        "made_public_by_id": null,
+        "embedding_params": null,
+        "cache_ttl": null,
+        "dataset_query": {
+          "database": 2,
+          "info": {
+            "card-entity-id": "1HV1KTVrKyLfdmCkj07t8"
+          },
+          "type": "native",
+          "native": {
+            "template-tags": {},
+            "query": "SELECT\n    product_name,\n    completed_quantity       AS quantite,\n    avg_completed_transaction_amount AS panier_moyen,\n    total_sales_amount       AS ca\nFROM gold_sales_by_product\nWHERE completed_quantity > 0;"
+          }
+        },
+        "id": 51,
+        "parameter_mappings": [],
+        "display": "scatter",
+        "archived_directly": false,
+        "entity_id": "8HcjX1gSlTdqtasPDlPWb",
+        "collection_preview": true,
+        "visualization_settings": {
+          "graph.series_order": null,
+          "graph.series_order_dimension": null,
+          "graph.dimensions": [
+            "product_name"
+          ],
+          "scatter.bubble": "quantite",
+          "series_settings": {
+            "panier_moyen": {
+              "color": "#227FD2"
+            }
+          },
+          "graph.x_axis.scale": "ordinal",
+          "graph.metrics": [
+            "panier_moyen"
+          ]
+        },
+        "metabase_version": "v0.54.1 (774e5a3)",
+        "parameters": [],
+        "dashboard_id": 2,
+        "created_at": "2026-10-09T13:29:00.624232Z",
+        "public_uuid": null
+      },
+      "updated_at": "2026-10-09T13:29:46.178621Z",
+      "col": 0,
+      "id": 48,
+      "parameter_mappings": [],
+      "card_id": 51,
+      "entity_id": "jR5o0zUtGAbSAFYw4BWT7",
+      "visualization_settings": {},
+      "size_y": 9,
+      "dashboard_id": 2,
+      "created_at": "2026-10-09T13:29:00.642794Z",
+      "row": 53
+    },
+    {
+      "size_x": 12,
+      "dashboard_tab_id": 4,
+      "series": [],
+      "action_id": null,
+      "collection_authority_level": null,
+      "card": {
+        "cache_invalidated_at": null,
+        "description": null,
+        "archived": false,
+        "view_count": 10,
+        "collection_position": null,
+        "source_card_id": null,
+        "table_id": null,
+        "result_metadata": [
+          {
+            "display_name": "category_name",
+            "field_ref": [
+              "field",
+              "category_name",
+              {
+                "base-type": "type/Text"
+              }
+            ],
+            "base_type": "type/Text",
+            "effective_type": "type/Text",
+            "database_type": "varchar",
+            "name": "category_name",
+            "semantic_type": null,
+            "fingerprint": {
+              "global": {
+                "distinct-count": 10,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Text": {
+                  "percent-json": 0.0,
+                  "percent-url": 0.0,
+                  "percent-email": 0.0,
+                  "percent-state": 0.0,
+                  "average-length": 6.5
+                }
+              }
+            }
+          },
+          {
+            "display_name": "taux_annulation_pct",
+            "field_ref": [
+              "field",
+              "taux_annulation_pct",
+              {
+                "base-type": "type/Decimal"
+              }
+            ],
+            "base_type": "type/Decimal",
+            "effective_type": "type/Decimal",
+            "database_type": "numeric",
+            "name": "taux_annulation_pct",
+            "semantic_type": null,
+            "fingerprint": {
+              "global": {
+                "distinct-count": 8,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 0.2004,
+                  "q1": 0.201,
+                  "q3": 0.2018,
+                  "max": 0.2028,
+                  "sd": 0.000818195847242239,
+                  "avg": 0.20155000000000003
+                }
+              }
+            }
+          },
+          {
+            "display_name": "transactions",
+            "field_ref": [
+              "field",
+              "transactions",
+              {
+                "base-type": "type/BigInteger"
+              }
+            ],
+            "base_type": "type/BigInteger",
+            "effective_type": "type/BigInteger",
+            "database_type": "int8",
+            "name": "transactions",
+            "semantic_type": null,
+            "fingerprint": {
+              "global": {
+                "distinct-count": 10,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 44411.0,
+                  "q1": 50332.0,
+                  "q3": 53233.0,
+                  "max": 54162.0,
+                  "sd": 3352.0235032986666,
+                  "avg": 50784.7
+                }
+              }
+            }
+          }
+        ],
+        "initially_published_at": null,
+        "can_write": true,
+        "database_id": 2,
+        "enable_embedding": false,
+        "collection_id": null,
+        "query_type": "native",
+        "name": "Top catégories par taux d'annulation",
+        "last_used_at": "2026-10-09T14:06:29.510328Z",
+        "type": "question",
+        "query_average_duration": 10,
+        "creator_id": 1,
+        "moderation_reviews": [],
+        "updated_at": "2026-10-09T14:07:40.87295Z",
+        "made_public_by_id": null,
+        "embedding_params": null,
+        "cache_ttl": null,
+        "dataset_query": {
+          "database": 2,
+          "info": {
+            "card-entity-id": "D62yQVb1e0brGdXSRaY8-"
+          },
+          "type": "native",
+          "native": {
+            "template-tags": {},
+            "query": "SELECT\n    category_name,\n    cancellation_rate_pct/100 AS taux_annulation_pct,\n    total_transactions   AS transactions\nFROM gold_sales_by_category\nWHERE total_transactions >= 10   -- évite le bruit\nORDER BY taux_annulation_pct DESC\nLIMIT 10;"
+          }
+        },
+        "id": 52,
+        "parameter_mappings": [],
+        "display": "bar",
+        "archived_directly": false,
+        "entity_id": "QWB86F0KrnJq5k8oS3oIl",
+        "collection_preview": true,
+        "visualization_settings": {
+          "series_settings": {
+            "taux_annulation_pct": {
+              "color": "#E75454"
+            },
+            "transactions": {
+              "color": "#227FD2"
+            }
+          },
+          "graph.dimensions": [
+            "category_name"
+          ],
+          "graph.x_axis.scale": "ordinal",
+          "column_settings": {
+            "[\"name\",\"taux_annulation_pct\"]": {
+              "number_style": "percent",
+              "suffix": ""
+            }
+          },
+          "graph.metrics": [
+            "transactions",
+            "taux_annulation_pct"
+          ]
+        },
+        "metabase_version": "v0.54.1 (774e5a3)",
+        "parameters": [],
+        "dashboard_id": 2,
+        "created_at": "2026-10-09T13:38:51.037352Z",
+        "public_uuid": null
+      },
+      "updated_at": "2026-10-09T13:38:51.055462Z",
+      "col": 0,
+      "id": 49,
+      "parameter_mappings": [],
+      "card_id": 52,
+      "entity_id": "VFypjyD3emgUiMkJKEnE-",
+      "visualization_settings": {},
+      "size_y": 6,
+      "dashboard_id": 2,
+      "created_at": "2026-10-09T13:38:51.055462Z",
+      "row": 62
+    },
+    {
+      "size_x": 12,
+      "dashboard_tab_id": 4,
+      "series": [],
+      "action_id": null,
+      "collection_authority_level": null,
+      "card": {
+        "cache_invalidated_at": null,
+        "description": null,
+        "archived": false,
+        "view_count": 9,
+        "collection_position": null,
+        "source_card_id": null,
+        "table_id": null,
+        "result_metadata": [
+          {
+            "display_name": "customer_segment",
+            "field_ref": [
+              "field",
+              "customer_segment",
+              {
+                "base-type": "type/Text"
+              }
+            ],
+            "base_type": "type/Text",
+            "effective_type": "type/Text",
+            "database_type": "varchar",
+            "name": "customer_segment",
+            "semantic_type": null,
+            "fingerprint": {
+              "global": {
+                "distinct-count": 3,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Text": {
+                  "percent-json": 0.0,
+                  "percent-url": 0.0,
+                  "percent-email": 0.0,
+                  "percent-state": 0.0,
+                  "average-length": 7.666666666666667
+                }
+              }
+            }
+          },
+          {
+            "display_name": "ca",
+            "field_ref": [
+              "field",
+              "ca",
+              {
+                "base-type": "type/Decimal"
+              }
+            ],
+            "base_type": "type/Decimal",
+            "effective_type": "type/Decimal",
+            "database_type": "numeric",
+            "name": "ca",
+            "semantic_type": null,
+            "fingerprint": {
+              "global": {
+                "distinct-count": 3,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 759069309.52,
+                  "q1": 759752887.685,
+                  "q3": 764431571.87,
+                  "max": 765307555.1,
+                  "sd": 3127025.198355098,
+                  "avg": 762060162.2666665
+                }
+              }
+            }
+          },
+          {
+            "display_name": "transactions",
+            "field_ref": [
+              "field",
+              "transactions",
+              {
+                "base-type": "type/BigInteger"
+              }
+            ],
+            "base_type": "type/BigInteger",
+            "effective_type": "type/BigInteger",
+            "database_type": "int8",
+            "name": "transactions",
+            "semantic_type": null,
+            "fingerprint": {
+              "global": {
+                "distinct-count": 3,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 330451.0,
+                  "q1": 330762.75,
+                  "q3": 332881.5,
+                  "max": 333276.0,
+                  "sd": 1415.7281989609917,
+                  "avg": 331808.3333333333
+                }
+              }
+            }
+          },
+          {
+            "display_name": "clients_uniques",
+            "field_ref": [
+              "field",
+              "clients_uniques",
+              {
+                "base-type": "type/BigInteger"
+              }
+            ],
+            "base_type": "type/BigInteger",
+            "effective_type": "type/BigInteger",
+            "database_type": "int8",
+            "name": "clients_uniques",
+            "semantic_type": null,
+            "fingerprint": {
+              "global": {
+                "distinct-count": 3,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 33169.0,
+                  "q1": 33207.0,
+                  "q3": 33442.5,
+                  "max": 33483.0,
+                  "sd": 157.0265370354111,
+                  "avg": 33324.333333333336
+                }
+              }
+            }
+          },
+          {
+            "display_name": "panier_moyen",
+            "field_ref": [
+              "field",
+              "panier_moyen",
+              {
+                "base-type": "type/Decimal"
+              }
+            ],
+            "base_type": "type/Decimal",
+            "effective_type": "type/Decimal",
+            "database_type": "numeric",
+            "name": "panier_moyen",
+            "semantic_type": null,
+            "fingerprint": {
+              "global": {
+                "distinct-count": 3,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 2869.47,
+                  "q1": 2869.5899999999997,
+                  "q3": 2871.1425,
+                  "max": 2871.54,
+                  "sd": 1.0834666584626371,
+                  "avg": 2870.3199999999997
+                }
+              }
+            }
+          }
+        ],
+        "initially_published_at": null,
+        "can_write": true,
+        "database_id": 2,
+        "enable_embedding": false,
+        "collection_id": null,
+        "query_type": "native",
+        "name": "CA par segment client",
+        "last_used_at": "2026-10-09T14:06:29.510328Z",
+        "type": "question",
+        "query_average_duration": 9,
+        "creator_id": 1,
+        "moderation_reviews": [],
+        "updated_at": "2026-10-09T14:07:40.87295Z",
+        "made_public_by_id": null,
+        "embedding_params": null,
+        "cache_ttl": null,
+        "dataset_query": {
+          "database": 2,
+          "info": {
+            "card-entity-id": "LTpUV2Dc6Myj6a-NMSi-Z"
+          },
+          "type": "native",
+          "native": {
+            "template-tags": {},
+            "query": "SELECT\n    customer_segment,\n    total_sales_amount          AS ca,\n    total_transactions          AS transactions,\n    unique_completed_customers  AS clients_uniques,\n    avg_completed_transaction_amount AS panier_moyen\nFROM gold_sales_by_segment\nORDER BY ca DESC;"
+          }
+        },
+        "id": 53,
+        "parameter_mappings": [],
+        "display": "bar",
+        "archived_directly": false,
+        "entity_id": "1EOZjqmBtj6WAuutOjNlL",
+        "collection_preview": true,
+        "visualization_settings": {
+          "graph.dimensions": [
+            "customer_segment"
+          ],
+          "graph.x_axis.scale": "ordinal",
+          "column_settings": {
+            "[\"name\",\"ca\"]": {
+              "number_style": "currency",
+              "currency": "EUR"
+            },
+            "[\"name\",\"panier_moyen\"]": {
+              "number_style": "currency",
+              "currency": "EUR"
+            }
+          },
+          "graph.metrics": [
+            "ca",
+            "panier_moyen",
+            "transactions"
+          ]
+        },
+        "metabase_version": "v0.54.1 (774e5a3)",
+        "parameters": [],
+        "dashboard_id": 2,
+        "created_at": "2026-10-09T13:42:17.072959Z",
+        "public_uuid": null
+      },
+      "updated_at": "2026-10-09T14:07:40.87295Z",
+      "col": 12,
+      "id": 50,
+      "parameter_mappings": [],
+      "card_id": 53,
+      "entity_id": "--qnaZAK3soYOVZuL9FQT",
+      "visualization_settings": {
+        "graph.dimensions": [
+          "customer_segment"
+        ],
+        "graph.x_axis.scale": "ordinal",
+        "column_settings": {
+          "[\"name\",\"ca\"]": {
+            "number_style": "currency",
+            "currency": "EUR"
+          },
+          "[\"name\",\"panier_moyen\"]": {
+            "number_style": "currency",
+            "currency": "EUR"
+          }
+        },
+        "graph.metrics": [
+          "ca",
+          "panier_moyen",
+          "transactions"
+        ]
+      },
+      "size_y": 6,
+      "dashboard_id": 2,
+      "created_at": "2026-10-09T13:42:17.093188Z",
+      "row": 62
+    },
+    {
+      "size_x": 12,
+      "dashboard_tab_id": 4,
+      "series": [],
+      "action_id": null,
+      "collection_authority_level": null,
+      "card": {
+        "cache_invalidated_at": null,
+        "description": null,
+        "archived": false,
+        "view_count": 8,
+        "collection_position": null,
+        "source_card_id": null,
+        "table_id": null,
+        "result_metadata": [
+          {
+            "display_name": "customer_segment",
+            "field_ref": [
+              "field",
+              "customer_segment",
+              {
+                "base-type": "type/Text"
+              }
+            ],
+            "base_type": "type/Text",
+            "effective_type": "type/Text",
+            "database_type": "varchar",
+            "name": "customer_segment",
+            "semantic_type": null,
+            "fingerprint": {
+              "global": {
+                "distinct-count": 3,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Text": {
+                  "percent-json": 0.0,
+                  "percent-url": 0.0,
+                  "percent-email": 0.0,
+                  "percent-state": 0.0,
+                  "average-length": 7.666666666666667
+                }
+              }
+            }
+          },
+          {
+            "display_name": "panier_moyen",
+            "field_ref": [
+              "field",
+              "panier_moyen",
+              {
+                "base-type": "type/Decimal"
+              }
+            ],
+            "base_type": "type/Decimal",
+            "effective_type": "type/Decimal",
+            "database_type": "numeric",
+            "name": "panier_moyen",
+            "semantic_type": null,
+            "fingerprint": {
+              "global": {
+                "distinct-count": 3,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 2869.47,
+                  "q1": 2869.5899999999997,
+                  "q3": 2871.1425,
+                  "max": 2871.54,
+                  "sd": 1.0834666584626371,
+                  "avg": 2870.3199999999997
+                }
+              }
+            }
+          }
+        ],
+        "initially_published_at": null,
+        "can_write": true,
+        "database_id": 2,
+        "enable_embedding": false,
+        "collection_id": null,
+        "query_type": "native",
+        "name": "Panier moyen par segment",
+        "last_used_at": "2026-10-09T14:06:29.510328Z",
+        "type": "question",
+        "query_average_duration": 11,
+        "creator_id": 1,
+        "moderation_reviews": [],
+        "updated_at": "2026-10-09T14:07:40.87295Z",
+        "made_public_by_id": null,
+        "embedding_params": null,
+        "cache_ttl": null,
+        "dataset_query": {
+          "database": 2,
+          "info": {
+            "card-entity-id": "RCnsV7_yvXO3AjLjB65yM"
+          },
+          "type": "native",
+          "native": {
+            "template-tags": {},
+            "query": "SELECT\n    customer_segment,\n    avg_completed_transaction_amount AS panier_moyen\nFROM gold_sales_by_segment\nORDER BY panier_moyen DESC;"
+          }
+        },
+        "id": 54,
+        "parameter_mappings": [],
+        "display": "bar",
+        "archived_directly": false,
+        "entity_id": "bfrhL3e97DZvGTMguCrqa",
+        "collection_preview": true,
+        "visualization_settings": {
+          "series_settings": {
+            "panier_moyen": {
+              "color": "#51528D"
+            }
+          },
+          "graph.x_axis.scale": "ordinal",
+          "graph.dimensions": [
+            "customer_segment"
+          ],
+          "graph.metrics": [
+            "panier_moyen"
+          ]
+        },
+        "metabase_version": "v0.54.1 (774e5a3)",
+        "parameters": [],
+        "dashboard_id": 2,
+        "created_at": "2026-10-09T13:44:31.221837Z",
+        "public_uuid": null
+      },
+      "updated_at": "2026-10-09T13:48:03.437475Z",
+      "col": 0,
+      "id": 51,
+      "parameter_mappings": [],
+      "card_id": 54,
+      "entity_id": "jbbgl2rTAlwbg4LLwTjPC",
+      "visualization_settings": {},
+      "size_y": 8,
+      "dashboard_id": 2,
+      "created_at": "2026-10-09T13:44:31.242457Z",
+      "row": 68
+    },
+    {
+      "size_x": 12,
+      "dashboard_tab_id": 4,
+      "series": [],
+      "action_id": null,
+      "collection_authority_level": null,
+      "card": {
+        "cache_invalidated_at": null,
+        "description": null,
+        "archived": false,
+        "view_count": 7,
+        "collection_position": null,
+        "source_card_id": null,
+        "table_id": null,
+        "result_metadata": [
+          {
+            "display_name": "payment_method",
+            "field_ref": [
+              "field",
+              "payment_method",
+              {
+                "base-type": "type/Text"
+              }
+            ],
+            "base_type": "type/Text",
+            "effective_type": "type/Text",
+            "database_type": "varchar",
+            "name": "payment_method",
+            "semantic_type": null,
+            "fingerprint": {
+              "global": {
+                "distinct-count": 4,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Text": {
+                  "percent-json": 0.0,
+                  "percent-url": 0.0,
+                  "percent-email": 0.0,
+                  "percent-state": 0.0,
+                  "average-length": 8.25
+                }
+              }
+            }
+          },
+          {
+            "display_name": "nb_transactions",
+            "field_ref": [
+              "field",
+              "nb_transactions",
+              {
+                "base-type": "type/BigInteger"
+              }
+            ],
+            "base_type": "type/BigInteger",
+            "effective_type": "type/BigInteger",
+            "database_type": "int8",
+            "name": "nb_transactions",
+            "semantic_type": null,
+            "fingerprint": {
+              "global": {
+                "distinct-count": 4,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 198707.0,
+                  "q1": 198735.5,
+                  "q3": 199509.0,
+                  "max": 199811.0,
+                  "sd": 510.6645180546618,
+                  "avg": 199122.25
+                }
+              }
+            }
+          },
+          {
+            "display_name": "ca",
+            "field_ref": [
+              "field",
+              "ca",
+              {
+                "base-type": "type/Decimal"
+              }
+            ],
+            "base_type": "type/Decimal",
+            "effective_type": "type/Decimal",
+            "database_type": "numeric",
+            "name": "ca",
+            "semantic_type": null,
+            "fingerprint": {
+              "global": {
+                "distinct-count": 4,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 569661593.42,
+                  "q1": 570059837.03,
+                  "q3": 573030406.37,
+                  "max": 573721295.48,
+                  "sd": 1834496.631612529,
+                  "avg": 571545121.7
+                }
+              }
+            }
+          }
+        ],
+        "initially_published_at": null,
+        "can_write": true,
+        "database_id": 2,
+        "enable_embedding": false,
+        "collection_id": null,
+        "query_type": "native",
+        "name": "Répartition en fonction des moyens de paiement",
+        "last_used_at": "2026-10-09T14:06:29.510328Z",
+        "type": "question",
+        "query_average_duration": 285,
+        "creator_id": 1,
+        "moderation_reviews": [],
+        "updated_at": "2026-10-09T14:07:40.87295Z",
+        "made_public_by_id": null,
+        "embedding_params": null,
+        "cache_ttl": null,
+        "dataset_query": {
+          "database": 2,
+          "info": {
+            "card-entity-id": "FbU1gJNynMVhg7LvYvDIN"
+          },
+          "type": "native",
+          "native": {
+            "template-tags": {
+              "date_filter": {
+                "type": "text",
+                "name": "date_filter",
+                "id": "077496ee-934f-4e52-81a0-6104af4c46a1",
+                "display-name": "Date Filter"
+              },
+              "country_filter": {
+                "type": "text",
+                "name": "country_filter",
+                "id": "133afdf1-c006-42dc-ad03-19f4fbfdcb62",
+                "display-name": "Country Filter"
+              }
+            },
+            "query": "SELECT\n    payment_method,\n    COUNT(*)                   AS nb_transactions,\n    SUM(amount)                AS ca\nFROM gold_transactions_enriched\nWHERE status = 'completed'\n  [[AND {{date_filter}}]]\n  [[AND {{country_filter}}]]\nGROUP BY payment_method\nORDER BY ca DESC;"
+          }
+        },
+        "id": 55,
+        "parameter_mappings": [],
+        "display": "pie",
+        "archived_directly": false,
+        "entity_id": "XNUid6hScvr89gPimtTvK",
+        "collection_preview": true,
+        "visualization_settings": {
+          "pie.metric": "ca",
+          "pie.dimension": [
+            "payment_method"
+          ],
+          "column_settings": {
+            "[\"name\",\"ca\"]": {
+              "number_style": "currency",
+              "currency": "EUR",
+              "currency_in_header": true
+            }
+          }
+        },
+        "metabase_version": "v0.54.1 (774e5a3)",
+        "parameters": [
+          {
+            "id": "077496ee-934f-4e52-81a0-6104af4c46a1",
+            "type": "category",
+            "target": [
+              "variable",
+              [
+                "template-tag",
+                "date_filter"
+              ]
+            ],
+            "name": "Date Filter",
+            "slug": "date_filter"
+          },
+          {
+            "id": "133afdf1-c006-42dc-ad03-19f4fbfdcb62",
+            "type": "category",
+            "target": [
+              "variable",
+              [
+                "template-tag",
+                "country_filter"
+              ]
+            ],
+            "name": "Country Filter",
+            "slug": "country_filter"
+          }
+        ],
+        "dashboard_id": 2,
+        "created_at": "2026-10-09T13:47:32.381686Z",
+        "public_uuid": null
+      },
+      "updated_at": "2026-10-09T13:47:32.404261Z",
+      "col": 12,
+      "id": 52,
+      "parameter_mappings": [],
+      "card_id": 55,
+      "entity_id": "AlPvsr1UbDSckiEeRgLZf",
+      "visualization_settings": {},
+      "size_y": 8,
+      "dashboard_id": 2,
+      "created_at": "2026-10-09T13:47:32.404261Z",
+      "row": 68
+    },
+    {
+      "size_x": 12,
+      "dashboard_tab_id": 4,
+      "series": [],
+      "action_id": null,
+      "collection_authority_level": null,
+      "card": {
+        "cache_invalidated_at": null,
+        "description": null,
+        "archived": false,
+        "view_count": 9,
+        "collection_position": null,
+        "source_card_id": null,
+        "table_id": null,
+        "result_metadata": [
+          {
+            "display_name": "country_code",
+            "field_ref": [
+              "field",
+              "country_code",
+              {
+                "base-type": "type/Text"
+              }
+            ],
+            "base_type": "type/Text",
+            "effective_type": "type/Text",
+            "database_type": "varchar",
+            "name": "country_code",
+            "semantic_type": "type/Country",
+            "fingerprint": {
+              "global": {
+                "distinct-count": 7,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Text": {
+                  "percent-json": 0.0,
+                  "percent-url": 0.0,
+                  "percent-email": 0.0,
+                  "percent-state": 0.0,
+                  "average-length": 2.0
+                }
+              }
+            }
+          },
+          {
+            "display_name": "ca",
+            "field_ref": [
+              "field",
+              "ca",
+              {
+                "base-type": "type/Decimal"
+              }
+            ],
+            "base_type": "type/Decimal",
+            "effective_type": "type/Decimal",
+            "database_type": "numeric",
+            "name": "ca",
+            "semantic_type": null,
+            "fingerprint": {
+              "global": {
+                "distinct-count": 7,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 324828968.54,
+                  "q1": 326670670.03999996,
+                  "q3": 326978806.6525,
+                  "max": 327233407.69,
+                  "sd": 802871.3780149493,
+                  "avg": 326597212.40000004
+                }
+              }
+            }
+          },
+          {
+            "display_name": "transactions",
+            "field_ref": [
+              "field",
+              "transactions",
+              {
+                "base-type": "type/BigInteger"
+              }
+            ],
+            "base_type": "type/BigInteger",
+            "effective_type": "type/BigInteger",
+            "database_type": "int8",
+            "name": "transactions",
+            "semantic_type": null,
+            "fingerprint": {
+              "global": {
+                "distinct-count": 7,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 141903.0,
+                  "q1": 142105.75,
+                  "q3": 142318.25,
+                  "max": 142452.0,
+                  "sd": 179.25294710999606,
+                  "avg": 142203.57142857142
+                }
+              }
+            }
+          }
+        ],
+        "initially_published_at": null,
+        "can_write": true,
+        "database_id": 2,
+        "enable_embedding": false,
+        "collection_id": null,
+        "query_type": "native",
+        "name": "CA par pays (carte)",
+        "last_used_at": "2026-10-09T14:06:29.510328Z",
+        "type": "question",
+        "query_average_duration": 7,
+        "creator_id": 1,
+        "moderation_reviews": [],
+        "updated_at": "2026-10-09T14:07:40.87295Z",
+        "made_public_by_id": null,
+        "embedding_params": null,
+        "cache_ttl": null,
+        "dataset_query": {
+          "database": 2,
+          "type": "native",
+          "native": {
+            "template-tags": {},
+            "query": "SELECT\n    country              AS country_code,\n    total_sales_amount   AS ca,\n    total_transactions   AS transactions\nFROM gold_sales_by_country\nORDER BY ca DESC;"
+          }
+        },
+        "id": 57,
+        "parameter_mappings": [],
+        "display": "map",
+        "archived_directly": false,
+        "entity_id": "ODGwxFtoClkg9uCTfzt8Z",
+        "collection_preview": true,
+        "visualization_settings": {
+          "map.region": "world_countries",
+          "map.metric": "ca",
+          "map.dimension": "country_code",
+          "map.colors": [
+            "rgb(235, 245, 224)",
+            "rgb(197, 215, 178)",
+            "rgb(159, 185, 132)",
+            "rgb(121, 154, 86)",
+            "hsl(88.80000000000001, 51.8%, 28%)"
+          ]
+        },
+        "metabase_version": "v0.54.1 (774e5a3)",
+        "parameters": [],
+        "dashboard_id": 2,
+        "created_at": "2026-10-09T13:53:12.661553Z",
+        "public_uuid": null
+      },
+      "updated_at": "2026-10-09T13:57:27.419312Z",
+      "col": 0,
+      "id": 54,
+      "parameter_mappings": [],
+      "card_id": 57,
+      "entity_id": "CEO6Vw9McNSDgIgmbFNjq",
+      "visualization_settings": {},
+      "size_y": 9,
+      "dashboard_id": 2,
+      "created_at": "2026-10-09T13:53:12.679244Z",
+      "row": 76
+    },
+    {
+      "size_x": 12,
+      "dashboard_tab_id": 4,
+      "series": [],
+      "action_id": null,
+      "collection_authority_level": null,
+      "card": {
+        "cache_invalidated_at": null,
+        "description": null,
+        "archived": false,
+        "view_count": 9,
+        "collection_position": null,
+        "source_card_id": null,
+        "table_id": null,
+        "result_metadata": [
+          {
+            "display_name": "country_code",
+            "field_ref": [
+              "field",
+              "country_code",
+              {
+                "base-type": "type/Text"
+              }
+            ],
+            "base_type": "type/Text",
+            "effective_type": "type/Text",
+            "database_type": "varchar",
+            "name": "country_code",
+            "semantic_type": "type/Country",
+            "fingerprint": {
+              "global": {
+                "distinct-count": 7,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Text": {
+                  "percent-json": 0.0,
+                  "percent-url": 0.0,
+                  "percent-email": 0.0,
+                  "percent-state": 0.0,
+                  "average-length": 2.0
+                }
+              }
+            }
+          },
+          {
+            "display_name": "ca",
+            "field_ref": [
+              "field",
+              "ca",
+              {
+                "base-type": "type/Decimal"
+              }
+            ],
+            "base_type": "type/Decimal",
+            "effective_type": "type/Decimal",
+            "database_type": "numeric",
+            "name": "ca",
+            "semantic_type": null,
+            "fingerprint": {
+              "global": {
+                "distinct-count": 7,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 324828968.54,
+                  "q1": 326670670.03999996,
+                  "q3": 326978806.6525,
+                  "max": 327233407.69,
+                  "sd": 802871.3780149493,
+                  "avg": 326597212.40000004
+                }
+              }
+            }
+          },
+          {
+            "display_name": "transactions",
+            "field_ref": [
+              "field",
+              "transactions",
+              {
+                "base-type": "type/BigInteger"
+              }
+            ],
+            "base_type": "type/BigInteger",
+            "effective_type": "type/BigInteger",
+            "database_type": "int8",
+            "name": "transactions",
+            "semantic_type": null,
+            "fingerprint": {
+              "global": {
+                "distinct-count": 7,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 141903.0,
+                  "q1": 142105.75,
+                  "q3": 142318.25,
+                  "max": 142452.0,
+                  "sd": 179.25294710999606,
+                  "avg": 142203.57142857142
+                }
+              }
+            }
+          }
+        ],
+        "initially_published_at": null,
+        "can_write": true,
+        "database_id": 2,
+        "enable_embedding": false,
+        "collection_id": null,
+        "query_type": "native",
+        "name": "CA par pays (carte)",
+        "last_used_at": "2026-10-09T14:06:29.510328Z",
+        "type": "question",
+        "query_average_duration": 7,
+        "creator_id": 1,
+        "moderation_reviews": [],
+        "updated_at": "2026-10-09T14:07:40.87295Z",
+        "made_public_by_id": null,
+        "embedding_params": null,
+        "cache_ttl": null,
+        "dataset_query": {
+          "database": 2,
+          "type": "native",
+          "native": {
+            "template-tags": {},
+            "query": "SELECT\n    country              AS country_code,\n    total_sales_amount   AS ca,\n    total_transactions   AS transactions\nFROM gold_sales_by_country\nORDER BY ca DESC;"
+          }
+        },
+        "id": 57,
+        "parameter_mappings": [],
+        "display": "map",
+        "archived_directly": false,
+        "entity_id": "ODGwxFtoClkg9uCTfzt8Z",
+        "collection_preview": true,
+        "visualization_settings": {
+          "map.region": "world_countries",
+          "map.metric": "ca",
+          "map.dimension": "country_code",
+          "map.colors": [
+            "rgb(235, 245, 224)",
+            "rgb(197, 215, 178)",
+            "rgb(159, 185, 132)",
+            "rgb(121, 154, 86)",
+            "hsl(88.80000000000001, 51.8%, 28%)"
+          ]
+        },
+        "metabase_version": "v0.54.1 (774e5a3)",
+        "parameters": [],
+        "dashboard_id": 2,
+        "created_at": "2026-10-09T13:53:12.661553Z",
+        "public_uuid": null
+      },
+      "updated_at": "2026-10-09T13:57:27.419312Z",
+      "col": 12,
+      "id": 55,
+      "parameter_mappings": [],
+      "card_id": 57,
+      "entity_id": "F4iHIRfn92dCFenLgj83H",
+      "visualization_settings": {
+        "map.region": "world_countries",
+        "map.metric": "transactions",
+        "map.dimension": "country_code",
+        "map.colors": [
+          "rgb(218, 236, 251)",
+          "rgb(169, 202, 232)",
+          "rgb(119, 169, 213)",
+          "rgb(70, 135, 194)",
+          "hsl(208.29999999999995, 79.3%, 33.5%)"
+        ],
+        "card.title": "Nombre de transactions par pays (carte)"
+      },
+      "size_y": 9,
+      "dashboard_id": 2,
+      "created_at": "2026-10-09T13:57:27.419312Z",
+      "row": 76
+    },
+    {
+      "size_x": 12,
+      "dashboard_tab_id": 4,
+      "series": [],
+      "action_id": null,
+      "collection_authority_level": null,
+      "card": {
+        "cache_invalidated_at": null,
+        "description": null,
+        "archived": false,
+        "view_count": 4,
+        "collection_position": null,
+        "source_card_id": null,
+        "table_id": null,
+        "result_metadata": [
+          {
+            "display_name": "country",
+            "field_ref": [
+              "field",
+              "country",
+              {
+                "base-type": "type/Text"
+              }
+            ],
+            "base_type": "type/Text",
+            "effective_type": "type/Text",
+            "database_type": "varchar",
+            "name": "country",
+            "semantic_type": "type/Country",
+            "fingerprint": {
+              "global": {
+                "distinct-count": 7,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Text": {
+                  "percent-json": 0.0,
+                  "percent-url": 0.0,
+                  "percent-email": 0.0,
+                  "percent-state": 0.0,
+                  "average-length": 2.0
+                }
+              }
+            }
+          },
+          {
+            "display_name": "taux_annulation_pct",
+            "field_ref": [
+              "field",
+              "taux_annulation_pct",
+              {
+                "base-type": "type/Decimal"
+              }
+            ],
+            "base_type": "type/Decimal",
+            "effective_type": "type/Decimal",
+            "database_type": "numeric",
+            "name": "taux_annulation_pct",
+            "semantic_type": null,
+            "fingerprint": {
+              "global": {
+                "distinct-count": 7,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 0.1985,
+                  "q1": 0.1994,
+                  "q3": 0.200275,
+                  "max": 0.2008,
+                  "sd": 0.0007568732673685467,
+                  "avg": 0.19984285714285718
+                }
+              }
+            }
+          },
+          {
+            "display_name": "transactions",
+            "field_ref": [
+              "field",
+              "transactions",
+              {
+                "base-type": "type/BigInteger"
+              }
+            ],
+            "base_type": "type/BigInteger",
+            "effective_type": "type/BigInteger",
+            "database_type": "int8",
+            "name": "transactions",
+            "semantic_type": null,
+            "fingerprint": {
+              "global": {
+                "distinct-count": 7,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 141903.0,
+                  "q1": 142105.75,
+                  "q3": 142318.25,
+                  "max": 142452.0,
+                  "sd": 179.25294710999606,
+                  "avg": 142203.57142857142
+                }
+              }
+            }
+          }
+        ],
+        "initially_published_at": null,
+        "can_write": true,
+        "database_id": 2,
+        "enable_embedding": false,
+        "collection_id": null,
+        "query_type": "native",
+        "name": "Top 10 pays par taux d'annulation",
+        "last_used_at": "2026-10-09T14:06:29.510328Z",
+        "type": "question",
+        "query_average_duration": 6,
+        "creator_id": 1,
+        "moderation_reviews": [],
+        "updated_at": "2026-10-09T14:07:40.87295Z",
+        "made_public_by_id": null,
+        "embedding_params": null,
+        "cache_ttl": null,
+        "dataset_query": {
+          "database": 2,
+          "info": {
+            "card-entity-id": "O0zIBaf6p3h8yEEhYu3iO"
+          },
+          "type": "native",
+          "native": {
+            "template-tags": {},
+            "query": "SELECT\n    country,\n    cancellation_rate_pct/100 AS taux_annulation_pct,\n    total_transactions    AS transactions\nFROM gold_sales_by_country\nWHERE total_transactions >= 20\nORDER BY taux_annulation_pct DESC\nLIMIT 10;"
+          }
+        },
+        "id": 58,
+        "parameter_mappings": [],
+        "display": "bar",
+        "archived_directly": false,
+        "entity_id": "I1k3Jz2QkMcz7P6JCB5Tc",
+        "collection_preview": true,
+        "visualization_settings": {
+          "series_settings": {
+            "taux_annulation_pct": {
+              "color": "#E75454"
+            },
+            "transactions": {
+              "color": "#227FD2"
+            }
+          },
+          "graph.dimensions": [
+            "country"
+          ],
+          "graph.x_axis.scale": "ordinal",
+          "column_settings": {
+            "[\"name\",\"taux_annulation_pct\"]": {
+              "number_style": "percent"
+            }
+          },
+          "graph.metrics": [
+            "transactions",
+            "taux_annulation_pct"
+          ]
+        },
+        "metabase_version": "v0.54.1 (774e5a3)",
+        "parameters": [],
+        "dashboard_id": 2,
+        "created_at": "2026-10-09T13:59:17.630043Z",
+        "public_uuid": null
+      },
+      "updated_at": "2026-10-09T13:59:17.646318Z",
+      "col": 0,
+      "id": 56,
+      "parameter_mappings": [],
+      "card_id": 58,
+      "entity_id": "GcjI0q3-rNqKP50i0Dfci",
+      "visualization_settings": {},
+      "size_y": 6,
+      "dashboard_id": 2,
+      "created_at": "2026-10-09T13:59:17.646318Z",
+      "row": 85
+    },
+    {
+      "size_x": 12,
+      "dashboard_tab_id": 4,
+      "series": [],
+      "action_id": null,
+      "collection_authority_level": null,
+      "card": {
+        "cache_invalidated_at": null,
+        "description": null,
+        "archived": false,
+        "view_count": 3,
+        "collection_position": null,
+        "source_card_id": null,
+        "table_id": null,
+        "result_metadata": [
+          {
+            "display_name": "customer_segment",
+            "field_ref": [
+              "field",
+              "customer_segment",
+              {
+                "base-type": "type/Text"
+              }
+            ],
+            "base_type": "type/Text",
+            "effective_type": "type/Text",
+            "database_type": "varchar",
+            "name": "customer_segment",
+            "semantic_type": null,
+            "fingerprint": {
+              "global": {
+                "distinct-count": 3,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Text": {
+                  "percent-json": 0.0,
+                  "percent-url": 0.0,
+                  "percent-email": 0.0,
+                  "percent-state": 0.0,
+                  "average-length": 7.666666666666667
+                }
+              }
+            }
+          },
+          {
+            "display_name": "remise_moyenne_pct",
+            "field_ref": [
+              "field",
+              "remise_moyenne_pct",
+              {
+                "base-type": "type/Decimal"
+              }
+            ],
+            "base_type": "type/Decimal",
+            "effective_type": "type/Decimal",
+            "database_type": "numeric",
+            "name": "remise_moyenne_pct",
+            "semantic_type": null,
+            "fingerprint": {
+              "global": {
+                "distinct-count": 3,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 4.96,
+                  "q1": 4.9625,
+                  "q3": 4.9775,
+                  "max": 4.98,
+                  "sd": 0.010000000000000231,
+                  "avg": 4.97
+                }
+              }
+            }
+          },
+          {
+            "display_name": "nb_transactions",
+            "field_ref": [
+              "field",
+              "nb_transactions",
+              {
+                "base-type": "type/BigInteger"
+              }
+            ],
+            "base_type": "type/BigInteger",
+            "effective_type": "type/BigInteger",
+            "database_type": "int8",
+            "name": "nb_transactions",
+            "semantic_type": null,
+            "fingerprint": {
+              "global": {
+                "distinct-count": 3,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 264533.0,
+                  "q1": 264723.25,
+                  "q3": 266320.0,
+                  "max": 266662.0,
+                  "sd": 1078.8254415489714,
+                  "avg": 265496.3333333333
+                }
+              }
+            }
+          }
+        ],
+        "initially_published_at": null,
+        "can_write": true,
+        "database_id": 2,
+        "enable_embedding": false,
+        "collection_id": null,
+        "query_type": "native",
+        "name": "Remise moyenne accordée (par segment)",
+        "last_used_at": "2026-10-09T14:06:29.510328Z",
+        "type": "question",
+        "query_average_duration": 210,
+        "creator_id": 1,
+        "moderation_reviews": [],
+        "updated_at": "2026-10-09T14:07:40.87295Z",
+        "made_public_by_id": null,
+        "embedding_params": null,
+        "cache_ttl": null,
+        "dataset_query": {
+          "database": 2,
+          "info": {
+            "card-entity-id": "wvO4Bun0th_pHAxNSHW2g"
+          },
+          "type": "native",
+          "native": {
+            "template-tags": {},
+            "query": "SELECT\n    customer_segment,\n    ROUND(AVG(discount_rate) * 100, 2) AS remise_moyenne_pct,\n    COUNT(*) AS nb_transactions\nFROM gold_transactions_enriched\nWHERE status = 'completed'\nGROUP BY customer_segment\nORDER BY remise_moyenne_pct DESC;"
+          }
+        },
+        "id": 59,
+        "parameter_mappings": [],
+        "display": "bar",
+        "archived_directly": false,
+        "entity_id": "dyEeNiOp92N0z1s7guXyG",
+        "collection_preview": true,
+        "visualization_settings": {
+          "graph.dimensions": [
+            "customer_segment"
+          ],
+          "graph.x_axis.scale": "ordinal",
+          "graph.metrics": [
+            "nb_transactions",
+            "remise_moyenne_pct"
+          ]
+        },
+        "metabase_version": "v0.54.1 (774e5a3)",
+        "parameters": [],
+        "dashboard_id": 2,
+        "created_at": "2026-10-09T14:01:30.252901Z",
+        "public_uuid": null
+      },
+      "updated_at": "2026-10-09T14:01:30.271839Z",
+      "col": 12,
+      "id": 57,
+      "parameter_mappings": [],
+      "card_id": 59,
+      "entity_id": "mlJFXUiWLuNieRATVtkWj",
+      "visualization_settings": {},
+      "size_y": 6,
+      "dashboard_id": 2,
+      "created_at": "2026-10-09T14:01:30.271839Z",
+      "row": 85
+    },
+    {
+      "size_x": 24,
+      "dashboard_tab_id": 4,
+      "series": [],
+      "action_id": null,
+      "collection_authority_level": null,
+      "card": {
+        "cache_invalidated_at": null,
+        "description": null,
+        "archived": false,
+        "view_count": 2,
+        "collection_position": null,
+        "source_card_id": null,
+        "table_id": null,
+        "result_metadata": [
+          {
+            "display_name": "payment_method",
+            "field_ref": [
+              "field",
+              "payment_method",
+              {
+                "base-type": "type/Text"
+              }
+            ],
+            "base_type": "type/Text",
+            "effective_type": "type/Text",
+            "database_type": "varchar",
+            "name": "payment_method",
+            "semantic_type": null,
+            "fingerprint": {
+              "global": {
+                "distinct-count": 4,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Text": {
+                  "percent-json": 0.0,
+                  "percent-url": 0.0,
+                  "percent-email": 0.0,
+                  "percent-state": 0.0,
+                  "average-length": 8.25
+                }
+              }
+            }
+          },
+          {
+            "display_name": "total",
+            "field_ref": [
+              "field",
+              "total",
+              {
+                "base-type": "type/BigInteger"
+              }
+            ],
+            "base_type": "type/BigInteger",
+            "effective_type": "type/BigInteger",
+            "database_type": "int8",
+            "name": "total",
+            "semantic_type": null,
+            "fingerprint": {
+              "global": {
+                "distinct-count": 4,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 248388.0,
+                  "q1": 248436.5,
+                  "q3": 249276.0,
+                  "max": 249695.0,
+                  "sd": 594.5829771080456,
+                  "avg": 248856.25
+                }
+              }
+            }
+          },
+          {
+            "display_name": "annulations",
+            "field_ref": [
+              "field",
+              "annulations",
+              {
+                "base-type": "type/BigInteger"
+              }
+            ],
+            "base_type": "type/BigInteger",
+            "effective_type": "type/BigInteger",
+            "database_type": "int8",
+            "name": "annulations",
+            "semantic_type": null,
+            "fingerprint": {
+              "global": {
+                "distinct-count": 4,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 49650.0,
+                  "q1": 49665.5,
+                  "q3": 49802.5,
+                  "max": 49884.0,
+                  "sd": 104.1377293139555,
+                  "avg": 49734.0
+                }
+              }
+            }
+          },
+          {
+            "display_name": "taux_annulation_pct",
+            "field_ref": [
+              "field",
+              "taux_annulation_pct",
+              {
+                "base-type": "type/Decimal"
+              }
+            ],
+            "base_type": "type/Decimal",
+            "effective_type": "type/Decimal",
+            "database_type": "numeric",
+            "name": "taux_annulation_pct",
+            "semantic_type": null,
+            "fingerprint": {
+              "global": {
+                "distinct-count": 4,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 19.95,
+                  "q1": 19.965,
+                  "q3": 20.005000000000003,
+                  "max": 20.01,
+                  "sd": 0.026457513110646685,
+                  "avg": 19.985000000000003
+                }
+              }
+            }
+          }
+        ],
+        "initially_published_at": null,
+        "can_write": true,
+        "database_id": 2,
+        "enable_embedding": false,
+        "collection_id": null,
+        "query_type": "native",
+        "name": "Taux d'annulation par moyen de paiement",
+        "last_used_at": "2026-10-09T14:06:29.510328Z",
+        "type": "question",
+        "query_average_duration": 185,
+        "creator_id": 1,
+        "moderation_reviews": [],
+        "updated_at": "2026-10-09T14:07:40.87295Z",
+        "made_public_by_id": null,
+        "embedding_params": null,
+        "cache_ttl": null,
+        "dataset_query": {
+          "database": 2,
+          "info": {
+            "card-entity-id": "L_jvQeg_2oiRIhHHTfy-P"
+          },
+          "type": "native",
+          "native": {
+            "template-tags": {},
+            "query": "SELECT\n    payment_method,\n    COUNT(*)                                              AS total,\n    SUM(CASE WHEN status='cancelled' THEN 1 ELSE 0 END)   AS annulations,\n    ROUND(\n        SUM(CASE WHEN status='cancelled' THEN 1 ELSE 0 END)::numeric\n        / NULLIF(COUNT(*), 0) * 100,\n        2\n    ) AS taux_annulation_pct\nFROM gold_transactions_enriched\nGROUP BY payment_method\nORDER BY taux_annulation_pct DESC;"
+          }
+        },
+        "id": 60,
+        "parameter_mappings": [],
+        "display": "combo",
+        "archived_directly": false,
+        "entity_id": "u1iMg2rGJdAuaTIPCPNxY",
+        "collection_preview": true,
+        "visualization_settings": {
+          "graph.dimensions": [
+            "payment_method"
+          ],
+          "series_settings": {
+            "taux_annulation_pct": {
+              "color": "#ED8535"
+            }
+          },
+          "graph.x_axis.scale": "ordinal",
+          "graph.metrics": [
+            "total",
+            "taux_annulation_pct"
+          ]
+        },
+        "metabase_version": "v0.54.1 (774e5a3)",
+        "parameters": [],
+        "dashboard_id": 2,
+        "created_at": "2026-10-09T14:03:48.132236Z",
+        "public_uuid": null
+      },
+      "updated_at": "2026-10-09T14:04:57.294163Z",
+      "col": 0,
+      "id": 58,
+      "parameter_mappings": [],
+      "card_id": 60,
+      "entity_id": "Nu1jHMpEXp9vWCMpNeP-M",
+      "visualization_settings": {},
+      "size_y": 6,
+      "dashboard_id": 2,
+      "created_at": "2026-10-09T14:03:48.155152Z",
+      "row": 91
+    },
+    {
+      "size_x": 12,
+      "dashboard_tab_id": 4,
+      "series": [],
+      "action_id": null,
+      "collection_authority_level": null,
+      "card": {
+        "cache_invalidated_at": null,
+        "description": null,
+        "archived": false,
+        "view_count": 1,
+        "collection_position": null,
+        "source_card_id": null,
+        "table_id": null,
+        "result_metadata": [
+          {
+            "display_name": "gold_count",
+            "field_ref": [
+              "field",
+              "gold_count",
+              {
+                "base-type": "type/BigInteger"
+              }
+            ],
+            "base_type": "type/BigInteger",
+            "effective_type": "type/BigInteger",
+            "database_type": "int8",
+            "name": "gold_count",
+            "semantic_type": "type/Quantity",
+            "fingerprint": {
+              "global": {
+                "distinct-count": 1,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 995425.0,
+                  "q1": 995425.0,
+                  "q3": 995425.0,
+                  "max": 995425.0,
+                  "sd": null,
+                  "avg": 995425.0
+                }
+              }
+            }
+          },
+          {
+            "display_name": "daily_total",
+            "field_ref": [
+              "field",
+              "daily_total",
+              {
+                "base-type": "type/Decimal"
+              }
+            ],
+            "base_type": "type/Decimal",
+            "effective_type": "type/Decimal",
+            "database_type": "numeric",
+            "name": "daily_total",
+            "semantic_type": null,
+            "fingerprint": {
+              "global": {
+                "distinct-count": 1,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 995425.0,
+                  "q1": 995425.0,
+                  "q3": 995425.0,
+                  "max": 995425.0,
+                  "sd": null,
+                  "avg": 995425.0
+                }
+              }
+            }
+          },
+          {
+            "display_name": "country_total",
+            "field_ref": [
+              "field",
+              "country_total",
+              {
+                "base-type": "type/Decimal"
+              }
+            ],
+            "base_type": "type/Decimal",
+            "effective_type": "type/Decimal",
+            "database_type": "numeric",
+            "name": "country_total",
+            "semantic_type": null,
+            "fingerprint": {
+              "global": {
+                "distinct-count": 1,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 995425.0,
+                  "q1": 995425.0,
+                  "q3": 995425.0,
+                  "max": 995425.0,
+                  "sd": null,
+                  "avg": 995425.0
+                }
+              }
+            }
+          },
+          {
+            "display_name": "category_total",
+            "field_ref": [
+              "field",
+              "category_total",
+              {
+                "base-type": "type/Decimal"
+              }
+            ],
+            "base_type": "type/Decimal",
+            "effective_type": "type/Decimal",
+            "database_type": "numeric",
+            "name": "category_total",
+            "semantic_type": null,
+            "fingerprint": {
+              "global": {
+                "distinct-count": 1,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 995425.0,
+                  "q1": 995425.0,
+                  "q3": 995425.0,
+                  "max": 995425.0,
+                  "sd": null,
+                  "avg": 995425.0
+                }
+              }
+            }
+          }
+        ],
+        "initially_published_at": null,
+        "can_write": true,
+        "database_id": 2,
+        "enable_embedding": false,
+        "collection_id": null,
+        "query_type": "native",
+        "name": "Contrôle qualité",
+        "last_used_at": "2026-10-09T14:06:29.510328Z",
+        "type": "question",
+        "query_average_duration": 197,
+        "creator_id": 1,
+        "moderation_reviews": [],
+        "updated_at": "2026-10-09T14:07:40.87295Z",
+        "made_public_by_id": null,
+        "embedding_params": null,
+        "cache_ttl": null,
+        "dataset_query": {
+          "database": 2,
+          "info": {
+            "card-entity-id": "svrUB3ROgNbzECVqHOF3A"
+          },
+          "type": "native",
+          "native": {
+            "template-tags": {},
+            "query": "-- Cohérence Gold vs Silver\nSELECT\n    (SELECT COUNT(*) FROM gold_transactions_enriched) AS gold_count,\n    (SELECT SUM(total_transactions) FROM gold_daily_sales) AS daily_total,\n    (SELECT SUM(total_transactions) FROM gold_sales_by_country) AS country_total,\n    (SELECT SUM(total_transactions) FROM gold_sales_by_category) AS category_total;"
+          }
+        },
+        "id": 61,
+        "parameter_mappings": [],
+        "display": "table",
+        "archived_directly": false,
+        "entity_id": "Jw_HpJYyCg73XOywNuiEW",
+        "collection_preview": true,
+        "visualization_settings": {
+          "table.pivot_column": "gold_count",
+          "table.cell_column": "daily_total"
+        },
+        "metabase_version": "v0.54.1 (774e5a3)",
+        "parameters": [],
+        "dashboard_id": 2,
+        "created_at": "2026-10-09T14:06:28.444975Z",
+        "public_uuid": null
+      },
+      "updated_at": "2026-10-09T14:07:40.87295Z",
+      "col": 0,
+      "id": 59,
+      "parameter_mappings": [],
+      "card_id": 61,
+      "entity_id": "12tsvyFt3Kc9WMYodF-hd",
+      "visualization_settings": {
+        "table.pivot_column": "gold_count",
+        "table.cell_column": "daily_total"
+      },
+      "size_y": 4,
+      "dashboard_id": 2,
+      "created_at": "2026-10-09T14:06:28.467663Z",
+      "row": 97
+    }
+  ],
+  "param_values": null,
+  "initially_published_at": null,
+  "can_write": true,
+  "tabs": [
+    {
+      "id": 4,
+      "dashboard_id": 2,
+      "name": "Executive",
+      "position": 0,
+      "entity_id": "USgG3A4yZs0KvlsDzq5Ut",
+      "created_at": "2026-10-09T12:09:56.602225Z",
+      "updated_at": "2026-10-09T12:09:56.602225Z"
+    }
+  ],
+  "enable_embedding": false,
+  "collection_id": null,
+  "show_in_getting_started": false,
+  "name": "E-Commerce Analytics",
+  "width": "fixed",
+  "caveats": null,
+  "collection_authority_level": null,
+  "creator_id": 1,
+  "can_restore": false,
+  "moderation_reviews": [],
+  "updated_at": "2026-10-09T14:07:40.87295Z",
+  "made_public_by_id": null,
+  "embedding_params": null,
+  "cache_ttl": null,
+  "last_used_param_values": {},
+  "id": 2,
+  "last_viewed_at": "2026-10-09T14:06:29.48166Z",
+  "position": null,
+  "archived_directly": false,
+  "entity_id": "IKU5O9nWDN_Gj1ToeepRY",
+  "param_fields": null,
+  "last-edit-info": {
+    "id": 1,
+    "email": "romaricnadjire07@gmail.com",
+    "first_name": "Romaric",
+    "last_name": null,
+    "timestamp": "2026-10-09T14:07:41.053018Z"
+  },
+  "collection": {
+    "metabase.models.collection.root/is-root?": true,
+    "authority_level": null,
+    "name": "Nos analyses",
+    "is_personal": false,
+    "id": "root",
+    "can_write": true
+  },
+  "parameters": [],
+  "auto_apply_filters": true,
+  "created_at": "2026-10-09T12:05:11.099936Z",
+  "public_uuid": null,
+  "points_of_interest": null,
+  "can_delete": false
+}

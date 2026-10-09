@@ -98,3 +98,48 @@ docker exec training_api sh -c "apt-get update && apt-get install -y curl"
 docker exec -u 0 training_spark_master sh -c \
   'mkdir -p /tmp/spark-ivy/cache /tmp/spark-ivy/jars && chmod -R 777 /tmp/spark-ivy'
 ```
+
+## Créer la base metabase_app dans PostgreSQL
+
+```bash
+docker exec -i airflow_training_postgres \
+  psql -U "$POSTGRES_USER" -d "$POSTGRES_DB" \
+  -c "CREATE DATABASE metabase_app;"
+```
+
+### Si tu veux vraiment spécifier le propriétaire
+
+```bash
+docker exec -i airflow_training_postgres \
+  psql -U "$POSTGRES_USER" -d "$POSTGRES_DB" \
+  -c "CREATE DATABASE metabase_app OWNER = $POSTGRES_USER;"
+```
+
+### Si $POSTGRES_USER n'est pas défini dans ton shell
+
+```bash
+docker exec -it airflow_training_postgres bash
+# maintenant tu es dans le conteneur
+psql -U "$POSTGRES_USER" -d "$POSTGRES_DB" -c "CREATE DATABASE metabase_app;"
+exit
+```
+
+### Puis redémarre Metabase
+
+```bash
+docker compose restart metabase
+docker compose logs -f metabase
+```
+
+### Vérification
+
+```bash
+docker exec -i airflow_training_postgres \
+  psql -U "$POSTGRES_USER" -d "$POSTGRES_DB" -c "\l" | grep metabase_app
+```
+
+## Génère la clé une fois avec
+
+```bash
+openssl rand -hex 32
+```
