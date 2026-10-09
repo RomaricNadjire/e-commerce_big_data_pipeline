@@ -18,3 +18,19 @@ logs/
 
 # OS
 .DS_Store
+
+
+# Airflow runtime
+airflow/airflow.cfg
+airflow/airflow.db
+airflow/logs/
+airflow/plugins/
+airflow/simple_auth_manager_passwords.json.generated
+airflow/*.pid
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
